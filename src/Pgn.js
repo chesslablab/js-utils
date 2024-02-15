@@ -6,3 +6,5 @@ export class Pgn {
       CASTLING_LONG: 'O-O-O',
   }
 }
+
+export default Pgn;
