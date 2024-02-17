@@ -36,14 +36,14 @@ export class SanMovesTable {
   createElements() {
     this.moves().forEach(move => {
       const tr = document.createElement('tr');
-
       const nTd = document.createElement('td');
       const nText = document.createTextNode(move.n);
+      const wTd = document.createElement('td');
+      const wText = document.createTextNode(move.w);
+
       nTd.appendChild(nText);
       tr.appendChild(nTd);
 
-      const wTd = document.createElement('td');
-      const wText = document.createTextNode(move.w);
       wTd.appendChild(wText);
       wTd.addEventListener('click', () => {
         Array.from(document.querySelectorAll(`.${ACTIVE_MOVE_CLASS_NAME}`)).forEach(
@@ -52,6 +52,7 @@ export class SanMovesTable {
         wTd.classList.add(ACTIVE_MOVE_CLASS_NAME);
         this.settings.chessboard.setPosition(this.settings.fen[move.wFen], true);
       });
+      
       tr.appendChild(wTd);
 
       if (move.b) {
