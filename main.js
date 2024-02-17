@@ -1,7 +1,12 @@
-import Movetext from './src/Movetext.js';
-import Nag from './src/Nag.js';
-import Pgn from './src/Pgn.js';
+import SanMovesTable from './src/SanMovesTable.js';
 
-console.log(Movetext.toRows('1.e4 e5 2.Nf3'));
-console.log(Nag.glyphs);
-console.log(Pgn.symbol);
+let sanMoves = new SanMovesTable(
+  'sanMoves',
+  '1.e4 e5 2.Nf3',
+  [
+    'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq -',
+    'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3',
+    'rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq e6',
+    'rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq -'
+  ]
+);
