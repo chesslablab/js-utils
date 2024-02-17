@@ -1,10 +1,11 @@
 import Movetext from '../src/common/Movetext.js';
 
 export default class SanMovesTable {
-  constructor(id, movetext, fen) {
+  constructor(id, movetext, fen, board) {
     this.id = id;
     this.movetext = movetext;
     this.fen = fen;
+    this.board = board;
 
     this.createElements();
   }
@@ -34,6 +35,7 @@ export default class SanMovesTable {
 
   createElements() {
     const tbody = document.querySelector(`#${this.id} tbody`);
+
     this.moves().forEach(move => {
       const tr = document.createElement('tr');
 
@@ -45,12 +47,18 @@ export default class SanMovesTable {
       const wTd = document.createElement('td');
       const wText = document.createTextNode(move.w);
       wTd.appendChild(wText);
+      wTd.addEventListener('click', () => {
+        this.board.setPosition(this.fen[move.wFen], true);
+      });
       tr.appendChild(wTd);
 
       if (move.b) {
         const bTd = document.createElement('td');
         const bText = document.createTextNode(move.b);
         bTd.appendChild(bText);
+        bTd.addEventListener('click', () => {
+          this.board.setPosition(this.fen[move.wFen], true);
+        });
         tr.appendChild(bTd);
       }
 
