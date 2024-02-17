@@ -1,6 +1,8 @@
 import Movetext from '../src/common/Movetext.js';
 
-export default class SanMovesTable {
+export const ACTIVE_MOVE_CLASS_NAME = 'active-move';
+
+export class SanMovesTable {
   constructor(el, settings) {
     this.el = el;
     this.settings = settings;
@@ -44,6 +46,10 @@ export default class SanMovesTable {
       const wText = document.createTextNode(move.w);
       wTd.appendChild(wText);
       wTd.addEventListener('click', () => {
+        Array.from(document.querySelectorAll(`.${ACTIVE_MOVE_CLASS_NAME}`)).forEach(
+          (el) => el.classList.remove(ACTIVE_MOVE_CLASS_NAME)
+        );
+        wTd.classList.add(ACTIVE_MOVE_CLASS_NAME);
         this.settings.chessboard.setPosition(this.settings.fen[move.wFen], true);
       });
       tr.appendChild(wTd);
@@ -53,6 +59,10 @@ export default class SanMovesTable {
         const bText = document.createTextNode(move.b);
         bTd.appendChild(bText);
         bTd.addEventListener('click', () => {
+          Array.from(document.querySelectorAll(`.${ACTIVE_MOVE_CLASS_NAME}`)).forEach(
+            (el) => el.classList.remove(ACTIVE_MOVE_CLASS_NAME)
+          );
+          bTd.classList.add(ACTIVE_MOVE_CLASS_NAME);
           this.settings.chessboard.setPosition(this.settings.fen[move.bFen], true);
         });
         tr.appendChild(bTd);

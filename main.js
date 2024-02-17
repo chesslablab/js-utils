@@ -1,6 +1,6 @@
 import {COLOR, Chessboard, BORDER_TYPE} from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/Chessboard.js";
 import {FEN} from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/model/Position.js";
-import SanMovesTable from './src/SanMovesTable.js';
+import {SanMovesTable} from './src/SanMovesTable.js';
 
 let chessboard = new Chessboard(
   document.getElementById('board'),
