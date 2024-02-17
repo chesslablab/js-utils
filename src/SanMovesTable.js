@@ -1,11 +1,11 @@
 import Movetext from '../src/common/Movetext.js';
 
 export default class SanMovesTable {
-  constructor(id, movetext, fen, board) {
+  constructor(id, movetext, fen, chessboard) {
     this.id = id;
     this.movetext = movetext;
     this.fen = fen;
-    this.board = board;
+    this.chessboard = chessboard;
 
     this.createElements();
   }
@@ -48,7 +48,7 @@ export default class SanMovesTable {
       const wText = document.createTextNode(move.w);
       wTd.appendChild(wText);
       wTd.addEventListener('click', () => {
-        this.board.setPosition(this.fen[move.wFen], true);
+        this.chessboard.setPosition(this.fen[move.wFen], true);
       });
       tr.appendChild(wTd);
 
@@ -57,7 +57,7 @@ export default class SanMovesTable {
         const bText = document.createTextNode(move.b);
         bTd.appendChild(bText);
         bTd.addEventListener('click', () => {
-          this.board.setPosition(this.fen[move.wFen], true);
+          this.chessboard.setPosition(this.fen[move.bFen], true);
         });
         tr.appendChild(bTd);
       }
