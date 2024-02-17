@@ -51,8 +51,9 @@ export class SanMovesTable {
         );
         wTd.classList.add(ACTIVE_MOVE_CLASS_NAME);
         this.settings.chessboard.setPosition(this.settings.fen[move.wFen], true);
+        this.moveInput(move);
       });
-      
+
       tr.appendChild(wTd);
 
       if (move.b) {
@@ -65,11 +66,21 @@ export class SanMovesTable {
           );
           bTd.classList.add(ACTIVE_MOVE_CLASS_NAME);
           this.settings.chessboard.setPosition(this.settings.fen[move.bFen], true);
+          this.moveInput(move);
         });
         tr.appendChild(bTd);
       }
 
       this.el.appendChild(tr);
     });
+  }
+
+  moveInput(move) {
+    this.settings.chessboard.disableMoveInput();
+    if (move?.bFen === this.settings.fen.length - 1) {
+      this.settings.chessboard.enableMoveInput(this.settings.inputHandler);
+    } else if (move.wFen === this.settings.fen.length - 1) {
+      this.settings.chessboard.enableMoveInput(this.settings.inputHandler);
+    }
   }
 }
