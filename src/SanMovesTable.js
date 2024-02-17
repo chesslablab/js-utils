@@ -1,11 +1,9 @@
 import Movetext from '../src/common/Movetext.js';
 
 export default class SanMovesTable {
-  constructor(id, movetext, fen, chessboard) {
-    this.id = id;
-    this.movetext = movetext;
-    this.fen = fen;
-    this.chessboard = chessboard;
+  constructor(el, settings) {
+    this.el = el;
+    this.settings = settings;
 
     this.createElements();
   }
@@ -14,7 +12,7 @@ export default class SanMovesTable {
     let j = 1;
 
     let rows = Movetext.toRows(
-      this.movetext?.replace(/\s?\{[^}]+\}/g, '')
+      this.settings.movetext?.replace(/\s?\{[^}]+\}/g, '')
         .replace(/\s?\$[1-9][0-9]*/g, '')
         .trim()
     );
@@ -34,8 +32,6 @@ export default class SanMovesTable {
   }
 
   createElements() {
-    const tbody = document.querySelector(`#${this.id} tbody`);
-
     this.moves().forEach(move => {
       const tr = document.createElement('tr');
 
@@ -48,7 +44,7 @@ export default class SanMovesTable {
       const wText = document.createTextNode(move.w);
       wTd.appendChild(wText);
       wTd.addEventListener('click', () => {
-        this.chessboard.setPosition(this.fen[move.wFen], true);
+        this.settings.chessboard.setPosition(this.settings.fen[move.wFen], true);
       });
       tr.appendChild(wTd);
 
@@ -57,12 +53,12 @@ export default class SanMovesTable {
         const bText = document.createTextNode(move.b);
         bTd.appendChild(bText);
         bTd.addEventListener('click', () => {
-          this.chessboard.setPosition(this.fen[move.bFen], true);
+          this.settings.chessboard.setPosition(this.settings.fen[move.bFen], true);
         });
         tr.appendChild(bTd);
       }
 
-      tbody.appendChild(tr);
+      this.el.appendChild(tr);
     });
   }
 }
