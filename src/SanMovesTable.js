@@ -1,4 +1,4 @@
-import Movetext from '../src/common/Movetext.js';
+import { Movetext } from '../src/common/Movetext.js';
 
 export const ACTIVE_MOVE_CLASS_NAME = 'active-move';
 

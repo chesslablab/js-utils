@@ -637,5 +637,3 @@ export class Nag {
     return glyph.meaning;
   }
 }
-
-export default Nag;

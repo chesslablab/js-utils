@@ -1,4 +1,4 @@
-import Nag from './Nag.js';
+import { Nag } from './Nag.js';
 
 export class Movetext {
   static description = (str) => {
@@ -124,5 +124,3 @@ export class Movetext {
       );
   }
 }
-
-export default Movetext;

@@ -1,9 +1,32 @@
 {
+  "name": "@chesslablab/jsblab",
   "type": "module",
-  "scripts": {
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+  "module": "./src/index.js",
+  "browser": "./src/index.js",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "An easy-to-use JavaScript module library of chess components and utilities.",
+  "keywords": [
+    "chess",
+    "chessboard",
+    "utilities",
+    "ES6",
+    "module",
+    "widget"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chesslablab/jsblab.git"
   },
+  "author": "Jordi Bassagana",
+  "bugs": {
+    "url": "https://github.com/chesslablab/jsblab/issues"
+  },
+  "homepage": "https://github.com/chesslablab/jsblab#readme",
   "devDependencies": {
     "jest": "^29.7.0"
+  },
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   }
 }

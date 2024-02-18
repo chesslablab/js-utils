@@ -1,4 +1,4 @@
-import Movetext from '../../src/common/Movetext';
+import { Movetext } from '../../src/common/Movetext';
 
 describe('toRows()', () => {
   it('is 1.e4', () => {
