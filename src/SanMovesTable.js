@@ -80,7 +80,9 @@ export class SanMovesTable {
           this.settings.chessboard.enableMoveInput(this.settings.inputHandler);
         }
       });
-
+      if (move.wFen === this.current) {
+        wTd.classList.add(ACTIVE_MOVE_CLASS_NAME);
+      }
       tr.appendChild(wTd);
 
       if (move.b) {
@@ -99,6 +101,9 @@ export class SanMovesTable {
             this.settings.chessboard.enableMoveInput(this.settings.inputHandler);
           }
         });
+        if (move.bFen === this.current) {
+          bTd.classList.add(ACTIVE_MOVE_CLASS_NAME);
+        }
         tr.appendChild(bTd);
       }
 

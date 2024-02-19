@@ -22,6 +22,7 @@ export class HistoryButtons {
       this.settings.sanMovesTable.getSettings().chessboard.setPosition(
         this.settings.sanMovesTable.getSettings().fen[this.settings.sanMovesTable.getCurrent()], true
       );
+      this.settings.sanMovesTable.render();
     });
 
     this.el.children.item(1).addEventListener('click', () => {
@@ -29,6 +30,7 @@ export class HistoryButtons {
       this.settings.sanMovesTable.getSettings().chessboard.setPosition(
         this.settings.sanMovesTable.getSettings().fen[this.settings.sanMovesTable.getCurrent()], true
       );
+      this.settings.sanMovesTable.render();
     });
 
     this.el.children.item(2).addEventListener('click', () => {
@@ -36,6 +38,7 @@ export class HistoryButtons {
       this.settings.sanMovesTable.getSettings().chessboard.setPosition(
         this.settings.sanMovesTable.getSettings().fen[this.settings.sanMovesTable.getCurrent()], true
       );
+      this.settings.sanMovesTable.render();
     });
 
     this.el.children.item(3).addEventListener('click', () => {
@@ -43,6 +46,7 @@ export class HistoryButtons {
       this.settings.sanMovesTable.getSettings().chessboard.setPosition(
         this.settings.sanMovesTable.getSettings().fen[this.settings.sanMovesTable.getCurrent()], true
       );
+      this.settings.sanMovesTable.render();
     });
   }
 }
