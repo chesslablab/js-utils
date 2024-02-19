@@ -2,6 +2,10 @@ import { BORDER_TYPE, COLOR, INPUT_EVENT_TYPE, Chessboard } from "https://cdn.js
 import { Markers } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/extensions/markers/Markers.js";
 import { SanMovesTable } from './src/index.js';
 
+// -----------------------------------------------------------------------------
+// Initialize the chessboard and the moves table
+// -----------------------------------------------------------------------------
+
 const fen = [
   'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq -',
   'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3',
@@ -34,6 +38,8 @@ const inputHandler = (event) => {
   }
 }
 
+chessboard.enableMoveInput(inputHandler);
+
 let settings = {
   chessboard: chessboard,
   inputHandler: inputHandler,
@@ -46,13 +52,23 @@ const sanMovesTable = new SanMovesTable(
   settings
 );
 
+// -----------------------------------------------------------------------------
+// Update the chessboard and the moves table
+// -----------------------------------------------------------------------------
+
+const movetext = '1.e4 e5 2.Nf3 Nc6';
+
+const position = 'r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq -';
+
+chessboard.setPosition(position, true);
+
 settings = sanMovesTable.getSettings();
+
+fen.push(position);
 
 sanMovesTable.setSettings({
   ...settings,
-  movetext: '1.e4 e5 2.Nf3 Nc6'
-});
-
-sanMovesTable.render();
-
-chessboard.enableMoveInput(inputHandler);
+  movetext: movetext,
+  fen: fen
+})
+.render();
