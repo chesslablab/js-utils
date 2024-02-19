@@ -2,21 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>JavaScript modules examples</title>
+    <title>Examples</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/assets/chessboard.css"/>
     <script type="module" src="main.js"></script>
+    <style>
+      .container {
+        display: flex;
+      }
+      .col {
+        width: 50%;
+      }
+    </style>
   </head>
   <body>
-    <h1>Examples</h1>
-    <div id="board"></div>
-    <div id="historyButtons">
-      <button type="button"><<</button>
-      <button type="button"><</button>
-      <button type="button">></button>
-      <button type="button">>></button>
+    <div class="container">
+      <div id="board" class="col"></div>
+      <div class="col">
+        <div id="historyButtons">
+          <button type="button"><<</button>
+          <button type="button"><</button>
+          <button type="button">></button>
+          <button type="button">>></button>
+        </div>
+        <table id="sanMovesTable">
+          <tbody></tbody>
+        </table>
+      </div>
     </div>
-    <table id="sanMovesTable">
-      <tbody></tbody>
-    </table>
   </body>
 </html>
