@@ -1,6 +1,6 @@
 import { Movetext } from '../src/common/Movetext.js';
 
-export const ACTIVE_MOVE_CLASS_NAME = 'active-move';
+export const ACTIVE_MOVE = 'active-move';
 
 export class SanMovesTable {
   #el;
@@ -55,7 +55,8 @@ export class SanMovesTable {
   }
 
   #moveInput(el) {
-    el.classList.add(ACTIVE_MOVE_CLASS_NAME);
+    Array.from(document.querySelectorAll(`.${ACTIVE_MOVE}`)).forEach(el => el.classList.remove(ACTIVE_MOVE));
+    el.classList.add(ACTIVE_MOVE);
     this.settings.chessboard.disableMoveInput();
     if (this.settings.fen[this.current] === this.settings.fen[this.settings.fen.length - 1]) {
       this.settings.chessboard.enableMoveInput(this.settings.inputHandler);
@@ -77,9 +78,6 @@ export class SanMovesTable {
 
       wTd.appendChild(wText);
       wTd.addEventListener('click', () => {
-        Array.from(document.querySelectorAll(`.${ACTIVE_MOVE_CLASS_NAME}`)).forEach(
-          (el) => el.classList.remove(ACTIVE_MOVE_CLASS_NAME)
-        );
         this.current = move.wFen;
         this.settings.chessboard.setPosition(this.settings.fen[this.current], true);
         this.#moveInput(wTd);
@@ -94,9 +92,6 @@ export class SanMovesTable {
         const bText = document.createTextNode(move.b);
         bTd.appendChild(bText);
         bTd.addEventListener('click', () => {
-          Array.from(document.querySelectorAll(`.${ACTIVE_MOVE_CLASS_NAME}`)).forEach(
-            (el) => el.classList.remove(ACTIVE_MOVE_CLASS_NAME)
-          );
           this.current = move.bFen;
           this.settings.chessboard.setPosition(this.settings.fen[this.current], true);
           this.#moveInput(bTd);
