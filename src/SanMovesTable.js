@@ -54,6 +54,13 @@ export class SanMovesTable {
     return rows;
   }
 
+  #moveInput() {
+    this.settings.chessboard.disableMoveInput();
+    if (this.settings.fen[this.current] === this.settings.fen[this.settings.fen.length - 1]) {
+      this.settings.chessboard.enableMoveInput(this.settings.inputHandler);
+    }
+  }
+
   render() {
     this.#el.replaceChildren();
 
@@ -75,17 +82,11 @@ export class SanMovesTable {
         wTd.classList.add(ACTIVE_MOVE_CLASS_NAME);
         this.current = move.wFen;
         this.settings.chessboard.setPosition(this.settings.fen[this.current], true);
-        this.settings.chessboard.disableMoveInput();
-        if (this.settings.fen[this.current] === this.settings.fen[this.settings.fen.length - 1]) {
-          this.settings.chessboard.enableMoveInput(this.settings.inputHandler);
-        }
+        this.#moveInput();
       });
       if (move.wFen === this.current) {
         wTd.classList.add(ACTIVE_MOVE_CLASS_NAME);
-        this.settings.chessboard.disableMoveInput();
-        if (this.settings.fen[this.current] === this.settings.fen[this.settings.fen.length - 1]) {
-          this.settings.chessboard.enableMoveInput(this.settings.inputHandler);
-        }
+        this.#moveInput();
       }
       tr.appendChild(wTd);
 
@@ -100,17 +101,11 @@ export class SanMovesTable {
           bTd.classList.add(ACTIVE_MOVE_CLASS_NAME);
           this.current = move.bFen;
           this.settings.chessboard.setPosition(this.settings.fen[this.current], true);
-          this.settings.chessboard.disableMoveInput();
-          if (this.settings.fen[this.current] === this.settings.fen[this.settings.fen.length - 1]) {
-            this.settings.chessboard.enableMoveInput(this.settings.inputHandler);
-          }
+          this.#moveInput();
         });
         if (move.bFen === this.current) {
           bTd.classList.add(ACTIVE_MOVE_CLASS_NAME);
-          this.settings.chessboard.disableMoveInput();
-          if (this.settings.fen[this.current] === this.settings.fen[this.settings.fen.length - 1]) {
-            this.settings.chessboard.enableMoveInput(this.settings.inputHandler);
-          }
+          this.#moveInput();
         }
         tr.appendChild(bTd);
       }
