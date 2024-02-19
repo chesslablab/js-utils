@@ -42,8 +42,8 @@ const inputHandler = (event) => {
 
 chessboard.enableMoveInput(inputHandler);
 
-const historyButtons = new HistoryButtons(
-  document.querySelector('#historyButtons'),
+const sanMovesTable = new SanMovesTable(
+  document.querySelector('#sanMovesTable tbody'),
   {
     chessboard: chessboard,
     inputHandler: inputHandler,
@@ -52,13 +52,10 @@ const historyButtons = new HistoryButtons(
   }
 );
 
-const sanMovesTable = new SanMovesTable(
-  document.querySelector('#sanMovesTable tbody'),
+const historyButtons = new HistoryButtons(
+  document.querySelector('#historyButtons'),
   {
-    chessboard: chessboard,
-    inputHandler: inputHandler,
-    movetext: movetext,
-    fen: fen
+    sanMovesTable: sanMovesTable
   }
 );
 

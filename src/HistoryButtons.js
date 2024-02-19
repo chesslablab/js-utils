@@ -18,23 +18,31 @@ export class HistoryButtons {
 
   render() {
     this.el.children.item(0).addEventListener('click', () => {
-      // TODO
-      console.log('Backward');
+      this.settings.sanMovesTable.setCurrent(0);
+      this.settings.sanMovesTable.getSettings().chessboard.setPosition(
+        this.settings.sanMovesTable.getSettings().fen[this.settings.sanMovesTable.getCurrent()], true
+      );
     });
 
     this.el.children.item(1).addEventListener('click', () => {
-      // TODO
-      console.log('Step backward');
+      this.settings.sanMovesTable.setCurrent(this.settings.sanMovesTable.getCurrent() - 1);
+      this.settings.sanMovesTable.getSettings().chessboard.setPosition(
+        this.settings.sanMovesTable.getSettings().fen[this.settings.sanMovesTable.getCurrent()], true
+      );
     });
 
     this.el.children.item(2).addEventListener('click', () => {
-      // TODO
-      console.log('Step forward');
+      this.settings.sanMovesTable.setCurrent(this.settings.sanMovesTable.getCurrent() + 1);
+      this.settings.sanMovesTable.getSettings().chessboard.setPosition(
+        this.settings.sanMovesTable.getSettings().fen[this.settings.sanMovesTable.getCurrent()], true
+      );
     });
 
     this.el.children.item(3).addEventListener('click', () => {
-      // TODO
-      console.log('Forward');
+      this.settings.sanMovesTable.setCurrent(this.settings.sanMovesTable.getSettings().fen.length - 1);
+      this.settings.sanMovesTable.getSettings().chessboard.setPosition(
+        this.settings.sanMovesTable.getSettings().fen[this.settings.sanMovesTable.getCurrent()], true
+      );
     });
   }
 }

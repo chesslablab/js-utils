@@ -6,6 +6,7 @@ export class SanMovesTable {
   constructor(el, settings) {
     this.el = el;
     this.settings = settings;
+    this.current = settings.fen.length;
 
     this.render();
   }
@@ -16,6 +17,16 @@ export class SanMovesTable {
 
   setSettings(settings) {
     this.settings = settings;
+
+    return this;
+  }
+
+  getCurrent() {
+    return this.current;
+  }
+
+  setCurrent(current) {
+    this.current = current;
 
     return this;
   }
@@ -62,9 +73,10 @@ export class SanMovesTable {
           (el) => el.classList.remove(ACTIVE_MOVE_CLASS_NAME)
         );
         wTd.classList.add(ACTIVE_MOVE_CLASS_NAME);
-        this.settings.chessboard.setPosition(this.settings.fen[move.wFen], true);
+        this.current = move.wFen;
+        this.settings.chessboard.setPosition(this.settings.fen[this.current], true);
         this.settings.chessboard.disableMoveInput();
-        if (this.settings.fen[move.wFen] === this.settings.fen[this.settings.fen.length - 1]) {
+        if (this.settings.fen[this.current] === this.settings.fen[this.settings.fen.length - 1]) {
           this.settings.chessboard.enableMoveInput(this.settings.inputHandler);
         }
       });
@@ -80,9 +92,10 @@ export class SanMovesTable {
             (el) => el.classList.remove(ACTIVE_MOVE_CLASS_NAME)
           );
           bTd.classList.add(ACTIVE_MOVE_CLASS_NAME);
-          this.settings.chessboard.setPosition(this.settings.fen[move.bFen], true);
+          this.current = move.bFen;
+          this.settings.chessboard.setPosition(this.settings.fen[this.current], true);
           this.settings.chessboard.disableMoveInput();
-          if (this.settings.fen[move.bFen] === this.settings.fen[this.settings.fen.length - 1]) {
+          if (this.settings.fen[this.current] === this.settings.fen[this.settings.fen.length - 1]) {
             this.settings.chessboard.enableMoveInput(this.settings.inputHandler);
           }
         });
