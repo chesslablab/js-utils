@@ -67,15 +67,14 @@ const position = 'r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq -';
 
 chessboard.setPosition(position, true);
 
-const settings = sanMovesTable.getSettings();
-
 movetext = '1.e4 e5 2.Nf3 Nc6';
 
 fen.push(position);
 
-sanMovesTable.setSettings({
-  ...settings,
+sanMovesTable.settings = {
+  ...sanMovesTable.settings,
   movetext: movetext,
   fen: fen
-})
-.render();
+};
+
+sanMovesTable.render();

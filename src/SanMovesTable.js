@@ -3,35 +3,35 @@ import { Movetext } from '../src/common/Movetext.js';
 export const ACTIVE_MOVE_CLASS_NAME = 'active-move';
 
 export class SanMovesTable {
+  #el;
+  #settings;
+  #current;
+
   constructor(el, settings) {
-    this.el = el;
-    this.settings = settings;
-    this.current = settings.fen.length;
+    this.#el = el;
+    this.#settings = settings;
+    this.#current = settings.fen.length;
 
     this.render();
   }
 
-  getSettings() {
-    return this.settings;
+  get settings() {
+    return this.#settings;
   }
 
-  setSettings(settings) {
-    this.settings = settings;
-
-    return this;
+  set settings(settings) {
+    this.#settings = settings;
   }
 
-  getCurrent() {
-    return this.current;
+  get current() {
+    return this.#current;
   }
 
-  setCurrent(current) {
-    this.current = current;
-
-    return this;
+  set current(current) {
+    this.#current = current;
   }
 
-  moves() {
+  #moves() {
     let j = 1;
 
     let rows = Movetext.toRows(
@@ -55,9 +55,9 @@ export class SanMovesTable {
   }
 
   render() {
-    this.el.replaceChildren();
+    this.#el.replaceChildren();
 
-    this.moves().forEach(move => {
+    this.#moves().forEach(move => {
       const tr = document.createElement('tr');
       const nTd = document.createElement('td');
       const nText = document.createTextNode(move.n);
@@ -107,7 +107,7 @@ export class SanMovesTable {
         tr.appendChild(bTd);
       }
 
-      this.el.appendChild(tr);
+      this.#el.appendChild(tr);
     });
   }
 }
