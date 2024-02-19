@@ -54,7 +54,8 @@ export class SanMovesTable {
     return rows;
   }
 
-  #moveInput() {
+  #moveInput(el) {
+    el.classList.add(ACTIVE_MOVE_CLASS_NAME);
     this.settings.chessboard.disableMoveInput();
     if (this.settings.fen[this.current] === this.settings.fen[this.settings.fen.length - 1]) {
       this.settings.chessboard.enableMoveInput(this.settings.inputHandler);
@@ -79,14 +80,12 @@ export class SanMovesTable {
         Array.from(document.querySelectorAll(`.${ACTIVE_MOVE_CLASS_NAME}`)).forEach(
           (el) => el.classList.remove(ACTIVE_MOVE_CLASS_NAME)
         );
-        wTd.classList.add(ACTIVE_MOVE_CLASS_NAME);
         this.current = move.wFen;
         this.settings.chessboard.setPosition(this.settings.fen[this.current], true);
-        this.#moveInput();
+        this.#moveInput(wTd);
       });
       if (move.wFen === this.current) {
-        wTd.classList.add(ACTIVE_MOVE_CLASS_NAME);
-        this.#moveInput();
+        this.#moveInput(wTd);
       }
       tr.appendChild(wTd);
 
@@ -98,14 +97,12 @@ export class SanMovesTable {
           Array.from(document.querySelectorAll(`.${ACTIVE_MOVE_CLASS_NAME}`)).forEach(
             (el) => el.classList.remove(ACTIVE_MOVE_CLASS_NAME)
           );
-          bTd.classList.add(ACTIVE_MOVE_CLASS_NAME);
           this.current = move.bFen;
           this.settings.chessboard.setPosition(this.settings.fen[this.current], true);
-          this.#moveInput();
+          this.#moveInput(bTd);
         });
         if (move.bFen === this.current) {
-          bTd.classList.add(ACTIVE_MOVE_CLASS_NAME);
-          this.#moveInput();
+          this.#moveInput(bTd);
         }
         tr.appendChild(bTd);
       }
