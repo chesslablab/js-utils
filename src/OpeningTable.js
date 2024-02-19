@@ -20,21 +20,19 @@ export class OpeningTable {
   }
 
   render() {
-    this.#el.replaceChildren();
-
-    const opening = Opening.byMovetext(this.settings.sanMovesTable.settings.movetext)[0];
-
-    const tr = document.createElement('tr');
-    const ecoTd = document.createElement('td');
-    const ecoText = document.createTextNode(opening.eco);
-    const nameTd = document.createElement('td');
-    const nameText = document.createTextNode(opening.name);
-
-    ecoTd.appendChild(ecoText);
-    nameTd.appendChild(nameText);
-    tr.appendChild(ecoTd);
-    tr.appendChild(nameTd);
-
-    this.#el.appendChild(tr);
+    const opening = Opening.byMovetext(this.settings.sanMovesTable.settings.movetext);
+    if (opening) {
+      this.#el.replaceChildren();
+      const tr = document.createElement('tr');
+      const ecoTd = document.createElement('td');
+      const ecoText = document.createTextNode(opening[0].eco);
+      const nameTd = document.createElement('td');
+      const nameText = document.createTextNode(opening[0].name);
+      ecoTd.appendChild(ecoText);
+      nameTd.appendChild(nameText);
+      tr.appendChild(ecoTd);
+      tr.appendChild(nameTd);
+      this.#el.appendChild(tr);
+    }
   }
 }
