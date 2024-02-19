@@ -7,7 +7,17 @@ export class SanMovesTable {
     this.el = el;
     this.settings = settings;
 
-    this.createElements();
+    this.render();
+  }
+
+  getSettings() {
+    return this.settings;
+  }
+
+  setSettings(settings) {
+    this.settings = settings;
+
+    return this;
   }
 
   moves() {
@@ -33,7 +43,9 @@ export class SanMovesTable {
     return rows;
   }
 
-  createElements() {
+  render() {
+    this.el.replaceChildren();
+
     this.moves().forEach(move => {
       const tr = document.createElement('tr');
       const nTd = document.createElement('td');

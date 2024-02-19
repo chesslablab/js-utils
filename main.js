@@ -34,14 +34,25 @@ const inputHandler = (event) => {
   }
 }
 
+let settings = {
+  chessboard: chessboard,
+  inputHandler: inputHandler,
+  movetext: '1.e4 e5 2.Nf3',
+  fen: fen
+};
+
 const sanMovesTable = new SanMovesTable(
   document.querySelector('#sanMovesTable tbody'),
-  {
-    chessboard: chessboard,
-    inputHandler: inputHandler,
-    movetext: '1.e4 e5 2.Nf3',
-    fen: fen
-  }
+  settings
 );
+
+settings = sanMovesTable.getSettings();
+
+sanMovesTable.setSettings({
+  ...settings,
+  movetext: '1.e4 e5 2.Nf3 Nc6'
+});
+
+sanMovesTable.render();
 
 chessboard.enableMoveInput(inputHandler);
