@@ -1,9 +1,9 @@
 import { BORDER_TYPE, COLOR, INPUT_EVENT_TYPE, Chessboard } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/Chessboard.js";
 import { Markers } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/extensions/markers/Markers.js";
-import { HistoryButtons, SanMovesTable } from './src/index.js';
+import { HistoryButtons, OpeningTable, SanMovesTable } from './src/index.js';
 
 // -----------------------------------------------------------------------------
-// Initialize the chessboard, the history buttons and the moves table
+// Initialization
 // -----------------------------------------------------------------------------
 
 let movetext = '1.e4 e5 2.Nf3';
@@ -59,8 +59,15 @@ const historyButtons = new HistoryButtons(
   }
 );
 
+const openingTable = new OpeningTable(
+  document.querySelector('#openingTable'),
+  {
+    sanMovesTable: sanMovesTable
+  }
+);
+
 // -----------------------------------------------------------------------------
-// Update the chessboard, the history buttons and the moves table
+// Update the chessboard and the moves table
 // -----------------------------------------------------------------------------
 
 const position = 'r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq -';
