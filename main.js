@@ -34,8 +34,8 @@ const inputHandler = (event) => {
   }
 }
 
-const sanMoves = new SanMovesTable(
-  document.querySelector('#sanMoves tbody'),
+const sanMovesTable = new SanMovesTable(
+  document.querySelector('#sanMovesTable tbody'),
   {
     chessboard: chessboard,
     inputHandler: inputHandler,
