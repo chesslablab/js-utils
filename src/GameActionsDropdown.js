@@ -8,10 +8,10 @@ export class GameActionsDropdown {
     this.#el = el;
     this.#settings = settings;
 
-    this.render();
+    this.dom();
   }
 
-  render() {
+  dom() {
     this.#el.children.item(0).addEventListener('click', (event) => {
       event.preventDefault();
       this.#settings.chessboard.setOrientation(this.#settings.chessboard.getOrientation() === COLOR.white ? COLOR.black : COLOR.white);

@@ -8,7 +8,7 @@ export class OpeningTable {
     this.#el = el;
     this.#settings = settings;
 
-    this.render();
+    this.dom();
   }
 
   get settings() {
@@ -19,7 +19,7 @@ export class OpeningTable {
     this.#settings = settings;
   }
 
-  render() {
+  dom() {
     const opening = Opening.byMovetext(this.settings.sanMovesTable.settings.movetext);
     this.#el.replaceChildren();
     if (opening) {

@@ -12,7 +12,7 @@ export class SanMovesTable {
     this.#settings = settings;
     this.#current = settings.fen.length;
 
-    this.render();
+    this.dom();
   }
 
   get settings() {
@@ -63,7 +63,7 @@ export class SanMovesTable {
     }
   }
 
-  render() {
+  dom() {
     this.#el.replaceChildren();
 
     this.#moves().forEach(move => {

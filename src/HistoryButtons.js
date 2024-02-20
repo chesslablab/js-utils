@@ -6,7 +6,7 @@ export class HistoryButtons {
     this.#el = el;
     this.#settings = settings;
 
-    this.render();
+    this.dom();
   }
 
   get settings() {
@@ -17,13 +17,13 @@ export class HistoryButtons {
     this.#settings = settings;
   }
 
-  render() {
+  dom() {
     this.#el.children.item(0).addEventListener('click', () => {
       this.settings.sanMovesTable.current = 0;
       this.settings.sanMovesTable.settings.chessboard.setPosition(
         this.settings.sanMovesTable.settings.fen[this.settings.sanMovesTable.current], true
       );
-      this.settings.sanMovesTable.render();
+      this.settings.sanMovesTable.dom();
     });
 
     this.#el.children.item(1).addEventListener('click', () => {
@@ -32,7 +32,7 @@ export class HistoryButtons {
         this.settings.sanMovesTable.settings.chessboard.setPosition(
           this.settings.sanMovesTable.settings.fen[this.settings.sanMovesTable.current], true
         );
-        this.settings.sanMovesTable.render();
+        this.settings.sanMovesTable.dom();
       }
     });
 
@@ -42,7 +42,7 @@ export class HistoryButtons {
         this.settings.sanMovesTable.settings.chessboard.setPosition(
           this.settings.sanMovesTable.settings.fen[this.settings.sanMovesTable.current], true
         );
-        this.settings.sanMovesTable.render();
+        this.settings.sanMovesTable.dom();
       }
     });
 
@@ -51,7 +51,7 @@ export class HistoryButtons {
       this.settings.sanMovesTable.settings.chessboard.setPosition(
         this.settings.sanMovesTable.settings.fen[this.settings.sanMovesTable.current], true
       );
-      this.settings.sanMovesTable.render();
+      this.settings.sanMovesTable.dom();
     });
   }
 }

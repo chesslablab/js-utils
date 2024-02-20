@@ -92,4 +92,4 @@ sanMovesTable.settings = {
   fen: fen
 };
 
-sanMovesTable.render();
+sanMovesTable.dom();
