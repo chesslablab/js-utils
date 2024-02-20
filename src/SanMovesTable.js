@@ -54,7 +54,7 @@ export class SanMovesTable {
     return rows;
   }
 
-  #moveInput(el) {
+  #toggleMoveInput(el) {
     Array.from(document.querySelectorAll(`.${ACTIVE_MOVE}`)).forEach(el => el.classList.remove(ACTIVE_MOVE));
     el.classList.add(ACTIVE_MOVE);
     this.settings.chessboard.disableMoveInput();
@@ -80,10 +80,10 @@ export class SanMovesTable {
       wTd.addEventListener('click', () => {
         this.current = move.wFen;
         this.settings.chessboard.setPosition(this.settings.fen[this.current], true);
-        this.#moveInput(wTd);
+        this.#toggleMoveInput(wTd);
       });
       if (move.wFen === this.current) {
-        this.#moveInput(wTd);
+        this.#toggleMoveInput(wTd);
       }
       tr.appendChild(wTd);
 
@@ -94,10 +94,10 @@ export class SanMovesTable {
         bTd.addEventListener('click', () => {
           this.current = move.bFen;
           this.settings.chessboard.setPosition(this.settings.fen[this.current], true);
-          this.#moveInput(bTd);
+          this.#toggleMoveInput(bTd);
         });
         if (move.bFen === this.current) {
-          this.#moveInput(bTd);
+          this.#toggleMoveInput(bTd);
         }
         tr.appendChild(bTd);
       }
