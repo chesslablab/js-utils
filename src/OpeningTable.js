@@ -1,34 +1,17 @@
 import { Opening } from '../src/common/Opening.js';
+import AbstractComponent from '../src/AbstractComponent.js';
 
-export class OpeningTable {
-  #el;
-  #settings;
-
-  constructor(el, settings) {
-    this.#el = el;
-    this.#settings = settings;
-
-    this.dom();
-  }
-
-  get settings() {
-    return this.#settings;
-  }
-
-  set settings(settings) {
-    this.#settings = settings;
-  }
-
+export class OpeningTable extends AbstractComponent {
   dom() {
     const opening = Opening.byMovetext(this.settings.sanMovesTable.settings.movetext);
-    this.#el.replaceChildren();
+    this._el.replaceChildren();
     if (opening) {
       const tr = document.createElement('tr');
       const td = document.createElement('td');
       const tdText = document.createTextNode(`${opening[0].eco} ${opening[0].name}`);
       td.appendChild(tdText);
       tr.appendChild(td);
-      this.#el.appendChild(tr);
+      this._el.appendChild(tr);
     }
   }
 }
