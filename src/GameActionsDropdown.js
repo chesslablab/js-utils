@@ -19,7 +19,7 @@ export class GameActionsDropdown {
 
     this.#el.children.item(1).addEventListener('click', (event) => {
       event.preventDefault();
-      // TODO
+      navigator.clipboard.writeText(this.#settings.sanMovesTable.settings.movetext);
     });
 
     this.#el.children.item(2).addEventListener('click', (event) => {
