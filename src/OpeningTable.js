@@ -24,14 +24,10 @@ export class OpeningTable {
     this.#el.replaceChildren();
     if (opening) {
       const tr = document.createElement('tr');
-      const ecoTd = document.createElement('td');
-      const ecoText = document.createTextNode(opening[0].eco);
-      const nameTd = document.createElement('td');
-      const nameText = document.createTextNode(opening[0].name);
-      ecoTd.appendChild(ecoText);
-      nameTd.appendChild(nameText);
-      tr.appendChild(ecoTd);
-      tr.appendChild(nameTd);
+      const td = document.createElement('td');
+      const tdText = document.createTextNode(`${opening[0].eco} ${opening[0].name}`);
+      td.appendChild(tdText);
+      tr.appendChild(td);
       this.#el.appendChild(tr);
     }
   }
