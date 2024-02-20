@@ -1,6 +1,6 @@
 import { BORDER_TYPE, COLOR, INPUT_EVENT_TYPE, Chessboard } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/Chessboard.js";
 import { Markers } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/extensions/markers/Markers.js";
-import { HistoryButtons, OpeningTable, SanMovesTable } from './src/index.js';
+import { GameActionsDropdown, HistoryButtons, OpeningTable, SanMovesTable } from './src/index.js';
 
 // -----------------------------------------------------------------------------
 // Initialization
