@@ -21,8 +21,8 @@ export class OpeningTable {
 
   render() {
     const opening = Opening.byMovetext(this.settings.sanMovesTable.settings.movetext);
+    this.#el.replaceChildren();
     if (opening) {
-      this.#el.replaceChildren();
       const tr = document.createElement('tr');
       const ecoTd = document.createElement('td');
       const ecoText = document.createTextNode(opening[0].eco);
