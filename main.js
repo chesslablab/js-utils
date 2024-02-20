@@ -16,7 +16,7 @@ let fen = [
 ];
 
 const chessboard = new Chessboard(
-  document.getElementById('board'),
+  document.getElementById('chessboard'),
   {
     assetsUrl: "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/assets/",
     position: fen[fen.length - 1],
