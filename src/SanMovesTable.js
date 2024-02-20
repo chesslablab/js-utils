@@ -1,6 +1,6 @@
 import { Movetext } from '../src/common/Movetext.js';
 
-export const ACTIVE_MOVE = 'active-move';
+export const ACTIVE_MOVE = 'table-active';
 
 export class SanMovesTable {
   #el;
