@@ -16,4 +16,8 @@ export default class AbstractComponent {
   set settings(settings) {
     this._settings = settings;
   }
+
+  dom() {
+    throw new Error("The dom() method is an abstract method.");
+  }
 }
