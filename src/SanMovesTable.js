@@ -52,7 +52,7 @@ export class SanMovesTable extends AbstractComponent {
     }
   }
 
-  dom() {
+  domNode() {
     this._el.replaceChildren();
 
     this._moves().forEach(move => {

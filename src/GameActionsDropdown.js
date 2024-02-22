@@ -2,7 +2,7 @@ import { COLOR } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/Ches
 import AbstractComponent from '../src/AbstractComponent.js';
 
 export class GameActionsDropdown extends AbstractComponent {
-  dom() {
+  domNode() {
     this._el.children.item(0).addEventListener('click', (event) => {
       event.preventDefault();
       this._settings.chessboard.setOrientation(this._settings.chessboard.getOrientation() === COLOR.white ? COLOR.black : COLOR.white);

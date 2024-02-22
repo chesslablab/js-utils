@@ -1,13 +1,13 @@
 import AbstractComponent from '../src/AbstractComponent.js';
 
 export class HistoryButtons extends AbstractComponent {
-  dom() {
+  domNode() {
     this._el.children.item(0).addEventListener('click', () => {
       this.settings.sanMovesTable.current = 0;
       this.settings.sanMovesTable.settings.chessboard.setPosition(
         this.settings.sanMovesTable.settings.fen[this.settings.sanMovesTable.current], true
       );
-      this.settings.sanMovesTable.dom();
+      this.settings.sanMovesTable.domNode();
     });
 
     this._el.children.item(1).addEventListener('click', () => {
@@ -16,7 +16,7 @@ export class HistoryButtons extends AbstractComponent {
         this.settings.sanMovesTable.settings.chessboard.setPosition(
           this.settings.sanMovesTable.settings.fen[this.settings.sanMovesTable.current], true
         );
-        this.settings.sanMovesTable.dom();
+        this.settings.sanMovesTable.domNode();
       }
     });
 
@@ -26,7 +26,7 @@ export class HistoryButtons extends AbstractComponent {
         this.settings.sanMovesTable.settings.chessboard.setPosition(
           this.settings.sanMovesTable.settings.fen[this.settings.sanMovesTable.current], true
         );
-        this.settings.sanMovesTable.dom();
+        this.settings.sanMovesTable.domNode();
       }
     });
 
@@ -35,7 +35,7 @@ export class HistoryButtons extends AbstractComponent {
       this.settings.sanMovesTable.settings.chessboard.setPosition(
         this.settings.sanMovesTable.settings.fen[this.settings.sanMovesTable.current], true
       );
-      this.settings.sanMovesTable.dom();
+      this.settings.sanMovesTable.domNode();
     });
   }
 }
