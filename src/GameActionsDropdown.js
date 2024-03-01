@@ -5,17 +5,17 @@ export class GameActionsDropdown extends AbstractComponent {
   domNode() {
     this._el.children.item(0).addEventListener('click', (event) => {
       event.preventDefault();
-      this._settings.chessboard.setOrientation(this._settings.chessboard.getOrientation() === COLOR.white ? COLOR.black : COLOR.white);
+      this._props.chessboard.setOrientation(this._props.chessboard.getOrientation() === COLOR.white ? COLOR.black : COLOR.white);
     });
 
     this._el.children.item(1).addEventListener('click', (event) => {
       event.preventDefault();
-      navigator.clipboard.writeText(this._settings.sanMovesTable.settings.movetext);
+      navigator.clipboard.writeText(this._props.sanMovesTable.props.movetext);
     });
 
     this._el.children.item(2).addEventListener('click', (event) => {
       event.preventDefault();
-      navigator.clipboard.writeText(this._settings.sanMovesTable.settings.fen[this._settings.sanMovesTable.settings.fen.length - 1]);
+      navigator.clipboard.writeText(this._props.sanMovesTable.props.fen[this._props.sanMovesTable.props.fen.length - 1]);
     });
   }
 }

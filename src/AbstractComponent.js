@@ -1,20 +1,20 @@
 export default class AbstractComponent {
   _el;
-  _settings;
+  _props;
 
-  constructor(el, settings) {
+  constructor(el, props) {
     this._el = el;
-    this._settings = settings;
+    this._props = props;
 
     this.domNode();
   }
 
-  get settings() {
-    return this._settings;
+  get props() {
+    return this._props;
   }
 
-  set settings(settings) {
-    this._settings = settings;
+  set props(props) {
+    this._props = props;
   }
 
   domNode() {

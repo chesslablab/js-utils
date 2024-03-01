@@ -6,10 +6,10 @@ export const ACTIVE_MOVE = 'table-active';
 export class SanMovesTable extends AbstractComponent {
   _current;
 
-  constructor(el, settings) {
-    super(el, settings);
+  constructor(el, props) {
+    super(el, props);
 
-    this._current = settings.fen.length;
+    this._current = props.fen.length;
   }
 
   get current() {
@@ -24,7 +24,7 @@ export class SanMovesTable extends AbstractComponent {
     let j = 1;
 
     let rows = Movetext.toRows(
-      this.settings.movetext?.replace(/\s?\{[^}]+\}/g, '')
+      this.props.movetext?.replace(/\s?\{[^}]+\}/g, '')
         .replace(/\s?\$[1-9][0-9]*/g, '')
         .trim()
     );
@@ -46,9 +46,9 @@ export class SanMovesTable extends AbstractComponent {
   _toggleMoveInput(el) {
     Array.from(document.querySelectorAll(`.${ACTIVE_MOVE}`)).forEach(el => el.classList.remove(ACTIVE_MOVE));
     el.classList.add(ACTIVE_MOVE);
-    this.settings.chessboard.disableMoveInput();
-    if (this.settings.fen[this.current] === this.settings.fen[this.settings.fen.length - 1]) {
-      this.settings.chessboard.enableMoveInput(this.settings.inputHandler);
+    this.props.chessboard.disableMoveInput();
+    if (this.props.fen[this.current] === this.props.fen[this.props.fen.length - 1]) {
+      this.props.chessboard.enableMoveInput(this.props.inputHandler);
     }
   }
 
@@ -68,7 +68,7 @@ export class SanMovesTable extends AbstractComponent {
       wTd.appendChild(wText);
       wTd.addEventListener('click', () => {
         this.current = move.wFen;
-        this.settings.chessboard.setPosition(this.settings.fen[this.current], true);
+        this.props.chessboard.setPosition(this.props.fen[this.current], true);
         this._toggleMoveInput(wTd);
       });
       if (move.wFen === this.current) {
@@ -82,7 +82,7 @@ export class SanMovesTable extends AbstractComponent {
         bTd.appendChild(bText);
         bTd.addEventListener('click', () => {
           this.current = move.bFen;
-          this.settings.chessboard.setPosition(this.settings.fen[this.current], true);
+          this.props.chessboard.setPosition(this.props.fen[this.current], true);
           this._toggleMoveInput(bTd);
         });
         if (move.bFen === this.current) {

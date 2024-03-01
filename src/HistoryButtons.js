@@ -3,39 +3,39 @@ import AbstractComponent from '../src/AbstractComponent.js';
 export class HistoryButtons extends AbstractComponent {
   domNode() {
     this._el.children.item(0).addEventListener('click', () => {
-      this.settings.sanMovesTable.current = 0;
-      this.settings.sanMovesTable.settings.chessboard.setPosition(
-        this.settings.sanMovesTable.settings.fen[this.settings.sanMovesTable.current], true
+      this.props.sanMovesTable.current = 0;
+      this.props.sanMovesTable.props.chessboard.setPosition(
+        this.props.sanMovesTable.props.fen[this.props.sanMovesTable.current], true
       );
-      this.settings.sanMovesTable.domNode();
+      this.props.sanMovesTable.domNode();
     });
 
     this._el.children.item(1).addEventListener('click', () => {
-      if (this.settings.sanMovesTable.current > 0) {
-        this.settings.sanMovesTable.current = this.settings.sanMovesTable.current - 1;
-        this.settings.sanMovesTable.settings.chessboard.setPosition(
-          this.settings.sanMovesTable.settings.fen[this.settings.sanMovesTable.current], true
+      if (this.props.sanMovesTable.current > 0) {
+        this.props.sanMovesTable.current = this.props.sanMovesTable.current - 1;
+        this.props.sanMovesTable.props.chessboard.setPosition(
+          this.props.sanMovesTable.props.fen[this.props.sanMovesTable.current], true
         );
-        this.settings.sanMovesTable.domNode();
+        this.props.sanMovesTable.domNode();
       }
     });
 
     this._el.children.item(2).addEventListener('click', () => {
-      if (this.settings.sanMovesTable.current < this.settings.sanMovesTable.settings.fen.length - 1) {
-        this.settings.sanMovesTable.current = this.settings.sanMovesTable.current + 1;
-        this.settings.sanMovesTable.settings.chessboard.setPosition(
-          this.settings.sanMovesTable.settings.fen[this.settings.sanMovesTable.current], true
+      if (this.props.sanMovesTable.current < this.props.sanMovesTable.props.fen.length - 1) {
+        this.props.sanMovesTable.current = this.props.sanMovesTable.current + 1;
+        this.props.sanMovesTable.props.chessboard.setPosition(
+          this.props.sanMovesTable.props.fen[this.props.sanMovesTable.current], true
         );
-        this.settings.sanMovesTable.domNode();
+        this.props.sanMovesTable.domNode();
       }
     });
 
     this._el.children.item(3).addEventListener('click', () => {
-      this.settings.sanMovesTable.current = this.settings.sanMovesTable.settings.fen.length - 1;
-      this.settings.sanMovesTable.settings.chessboard.setPosition(
-        this.settings.sanMovesTable.settings.fen[this.settings.sanMovesTable.current], true
+      this.props.sanMovesTable.current = this.props.sanMovesTable.props.fen.length - 1;
+      this.props.sanMovesTable.props.chessboard.setPosition(
+        this.props.sanMovesTable.props.fen[this.props.sanMovesTable.current], true
       );
-      this.settings.sanMovesTable.domNode();
+      this.props.sanMovesTable.domNode();
     });
   }
 }
