@@ -62,7 +62,7 @@ const historyButtons = new HistoryButtons(
 const openingTable = new OpeningTable(
   document.querySelector('#openingTable tbody'),
   {
-    sanMovesTable: sanMovesTable
+    movetext: movetext
   }
 );
 
