@@ -5,4 +5,5 @@ export * from './common/Pgn.js';
 export * from './GameActionsDropdown.js';
 export * from './HistoryButtons.js';
 export * from './OpeningTable.js';
+export * from './RavMovesTable.js';
 export * from './SanMovesTable.js';
