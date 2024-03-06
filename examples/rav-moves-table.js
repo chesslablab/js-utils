@@ -7,10 +7,13 @@ import { GameActionsDropdown, HistoryButtons, OpeningTable, RavMovesTable } from
 // -----------------------------------------------------------------------------
 
 const props = {
-  filtered: "1.d4 Nf6 2.c4 e6 3.Nf3 d5 4.Nc3 Be7 5.Bf4 O-O 6.e3 c5 7.dxc5 Bxc5 8.a3 Nc6 9.Rc1 a6 10.b4 Bd6 11.Bg5 a5 12.b5 Ne7 13.Bxf6 gxf6 14.a4 Bb4 15.Be2 dxc4 16.O-O Nd5 17.Na2 Nb6 18.Qc2 e5 19.Nxb4 axb4 20.Bxc4 Nxc4 21.Qxc4 Rxa4 22.Rfd1 Qb6 23.Nh4 Be6 24.Qe4 Qxb5 25.Qf3 Kg7 26.Nf5+ Bxf5 27.Qxf5 b3 28.Rd6 b2 29.Qxf6+ Kg8 30.Qg5+ Kh8 31.Qf6+",
-  movetext: "1.d4 Nf6 2.c4 e6 3.Nf3 d5 4.Nc3 Be7 5.Bf4 O-O 6.e3 c5 7.dxc5 Bxc5 8.a3 Nc6 9.Rc1 a6 10.b4 Bd6 11.Bg5 a5 12.b5 Ne7 13.Bxf6 gxf6 14.a4 Bb4 15.Be2 dxc4 16.O-O Nd5 17.Na2 Nb6 18.Qc2 e5 19.Nxb4 axb4 20.Bxc4 Nxc4 21.Qxc4 Rxa4 22.Rfd1 Qb6 23.Nh4 Be6 24.Qe4 Qxb5 25.Qf3 Kg7 26.Nf5+ Bxf5 27.Qxf5 b3 28.Rd6 b2 29.Qxf6+ Kg8 30.Qg5+ Kh8 31.Qf6+",
+  filtered: "{Adapted notes, originally by J. R. Capablanca.} 1.d4 d5 2.Nf3 e6 3.c4 Nf6 4.Bg5 Be7 5.e3 Nbd7 6.Nc3 O-O 7.Rc1 c6 8.Qc2 c5 {is not a recommended move.} 9.Rd1 (9.cxd5 {would have been proper to continue.}) 9...Qa5 10.cxd5 Nxd5 11.Bxe7 Nxe7 12.Bd3 Nf6 13.O-O cxd4 14.Nxd4 (14.exd4 {was the alternative. It would have left, however, to a very difficult game where, in exchange for the attack, White would remain with an isolated queen\u0027s pawn; leading at this stage of the match by one point, I did not want to take any risks.}) 14...Bd7 15.Ne4 Ned5 16.Nb3 Qd8 17.Nxf6+ Nxf6 18.Qc5 Qb6 {neutralizes whatever little advantage White might have had. The draw is now insight.} 19.Rc1 Rfc8 20.Qxb6 axb6 21.Rxc8+ Rxc8 22.Rc1 Rxc1+ 23.Nxc1 Kf8",
   breakdown: [
-    "1.d4 Nf6 2.c4 e6 3.Nf3 d5 4.Nc3 Be7 5.Bf4 O-O 6.e3 c5 7.dxc5 Bxc5 8.a3 Nc6 9.Rc1 a6 10.b4 Bd6 11.Bg5 a5 12.b5 Ne7 13.Bxf6 gxf6 14.a4 Bb4 15.Be2 dxc4 16.O-O Nd5 17.Na2 Nb6 18.Qc2 e5 19.Nxb4 axb4 20.Bxc4 Nxc4 21.Qxc4 Rxa4 22.Rfd1 Qb6 23.Nh4 Be6 24.Qe4 Qxb5 25.Qf3 Kg7 26.Nf5+ Bxf5 27.Qxf5 b3 28.Rd6 b2 29.Qxf6+ Kg8 30.Qg5+ Kh8 31.Qf6+"
+    "{Adapted notes, originally by J. R. Capablanca.} 1.d4 d5 2.Nf3 e6 3.c4 Nf6 4.Bg5 Be7 5.e3 Nbd7 6.Nc3 O-O 7.Rc1 c6 8.Qc2 c5 {is not a recommended move.} 9.Rd1",
+    "9.cxd5 {would have been proper to continue.}",
+    "9...Qa5 10.cxd5 Nxd5 11.Bxe7 Nxe7 12.Bd3 Nf6 13.O-O cxd4 14.Nxd4",
+    "14.exd4 {was the alternative. It would have left, however, to a very difficult game where, in exchange for the attack, White would remain with an isolated queen\u0027s pawn; leading at this stage of the match by one point, I did not want to take any risks.}",
+    "14...Bd7 15.Ne4 Ned5 16.Nb3 Qd8 17.Nxf6+ Nxf6 18.Qc5 Qb6 {neutralizes whatever little advantage White might have had. The draw is now insight.} 19.Rc1 Rfc8 20.Qxb6 axb6 21.Rxc8+ Rxc8 22.Rc1 Rxc1+ 23.Nxc1 Kf8"
   ],
   fen: [
     "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq -",
