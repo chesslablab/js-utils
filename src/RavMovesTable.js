@@ -52,7 +52,7 @@ export class RavMovesTable extends AbstractComponent {
     return rows;
   }
 
-  _toggleMove(el) {
+  _activeMove(el) {
     Array.from(document.querySelectorAll(`.${ACTIVE_MOVE}`)).forEach(el => el.classList.remove(ACTIVE_MOVE));
     el.classList.add(ACTIVE_MOVE);
   }
@@ -61,7 +61,7 @@ export class RavMovesTable extends AbstractComponent {
     this._el.replaceChildren();
 
     const description = Movetext.description(this.props.breakdown[0]);
-    
+
     if (description) {
       const descrTr = document.createElement('tr');
       const descrTd = document.createElement('td');
@@ -91,10 +91,10 @@ export class RavMovesTable extends AbstractComponent {
       wTd.addEventListener('click', () => {
         this.current = move.wFen;
         this.props.chessboard.setPosition(this.props.fen[this.current], true);
-        this._toggleMove(wTd);
+        this._activeMove(wTd);
       });
       if (move.wFen === this.current) {
-        this._toggleMove(wTd);
+        this._activeMove(wTd);
       }
       tr.appendChild(wTd);
 
@@ -106,10 +106,10 @@ export class RavMovesTable extends AbstractComponent {
         bTd.addEventListener('click', () => {
           this.current = move.bFen;
           this.props.chessboard.setPosition(this.props.fen[this.current], true);
-          this._toggleMove(bTd);
+          this._activeMove(bTd);
         });
         if (move.bFen === this.current) {
-          this._toggleMove(bTd);
+          this._activeMove(bTd);
         }
         tr.appendChild(bTd);
       }
