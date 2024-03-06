@@ -3,7 +3,7 @@ import AbstractComponent from '../src/AbstractComponent.js';
 
 export class OpeningTable extends AbstractComponent {
   domNode() {
-    const opening = Opening.byMovetext(this.props.sanMovesTable.props.movetext);
+    const opening = Opening.byMovetext(this.props.movetext);
     this._el.replaceChildren();
     if (opening) {
       const tr = document.createElement('tr');

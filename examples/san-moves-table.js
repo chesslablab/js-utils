@@ -1,4 +1,4 @@
-import { BORDER_TYPE, COLOR, INPUT_EVENT_TYPE, Chessboard } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/Chessboard.js";
+import { INPUT_EVENT_TYPE, Chessboard } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/Chessboard.js";
 import { Markers } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/extensions/markers/Markers.js";
 import { GameActionsDropdown, HistoryButtons, OpeningTable, SanMovesTable } from '../src/index.js';
 
@@ -55,14 +55,14 @@ const sanMovesTable = new SanMovesTable(
 const historyButtons = new HistoryButtons(
   document.querySelector('#historyButtons'),
   {
-    sanMovesTable: sanMovesTable
+    movesTable: sanMovesTable
   }
 );
 
 const openingTable = new OpeningTable(
   document.querySelector('#openingTable tbody'),
   {
-    sanMovesTable: sanMovesTable
+    movetext: movetext
   }
 );
 
