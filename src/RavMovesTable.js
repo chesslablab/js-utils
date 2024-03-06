@@ -34,56 +34,15 @@ export class RavMovesTable extends AbstractComponent {
 
   description() {
     const comment = Movetext.description(stateRavMovesTable?.breakdown[0]);
-    if (comment) {
-      return (
-        <tr style={styles.tr}>
-          <td style={styles.td} colSpan='3'>{comment}</td>
-        </tr>
-      );
-    }
+
+    // TODO
 
     return null;
   }
 
-  moves() {
-    let j = 1;
-    let rows = [];
-    stateRavMovesTable?.breakdown.forEach((breakdown, i) => {
-      rows = [...rows, ...Movetext.toCommentedRows(breakdown, i)];
-    });
-    rows.forEach((row, i) => {
-      if (row.w !== '...') {
-        row.wFen = j;
-        j += 1;
-      }
-      if (row.b) {
-        row.bFen = j;
-        j += 1;
-      }
-    });
+  domNode() {
+    this._el.replaceChildren();
 
-    const colors = color(rows);
-
-    return rows.map((row, i) => {
-      let wTdStyle = {...styles.td, ...colors[i]};
-      let bTdStyle = {...styles.td, ...colors[i]};
-
-      if (row.wFen === hoveredRow) {
-        row.w !== '...' ? wTdStyle = {...wTdStyle, ...styles.td.hover} : wTdStyle.cursor = 'default';
-      } else if (isActiveMove(row.wFen)) {
-        wTdStyle = {...wTdStyle, ...styles.td.active};
-      }
-
-      if (row.bFen === hoveredRow) {
-        row.b ? bTdStyle = {...bTdStyle, ...styles.td.hover} : bTdStyle.cursor = 'default';
-      } else if (isActiveMove(row.bFen)) {
-        bTdStyle = {...bTdStyle, ...styles.td.active};
-      }
-
-      domNode() {
-        this._el.replaceChildren();
-
-      }
-    });
+    // TODO
   }
 }
