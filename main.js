@@ -69,8 +69,7 @@ const openingTable = new OpeningTable(
 const gameActionsDropdown = new GameActionsDropdown(
   document.querySelector('#gameActionsDropdown ul'),
   {
-    chessboard: chessboard,
-    sanMovesTable: sanMovesTable
+    movesTable: sanMovesTable
   }
 );
 
