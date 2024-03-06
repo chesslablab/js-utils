@@ -43,7 +43,7 @@ export class SanMovesTable extends AbstractComponent {
     return rows;
   }
 
-  _toggleMoveInput(el) {
+  _activeMove(el) {
     Array.from(document.querySelectorAll(`.${ACTIVE_MOVE}`)).forEach(el => el.classList.remove(ACTIVE_MOVE));
     el.classList.add(ACTIVE_MOVE);
     this.props.chessboard.disableMoveInput();
@@ -69,10 +69,10 @@ export class SanMovesTable extends AbstractComponent {
       wTd.addEventListener('click', () => {
         this.current = move.wFen;
         this.props.chessboard.setPosition(this.props.fen[this.current], true);
-        this._toggleMoveInput(wTd);
+        this._activeMove(wTd);
       });
       if (move.wFen === this.current) {
-        this._toggleMoveInput(wTd);
+        this._activeMove(wTd);
       }
       tr.appendChild(wTd);
 
@@ -83,10 +83,10 @@ export class SanMovesTable extends AbstractComponent {
         bTd.addEventListener('click', () => {
           this.current = move.bFen;
           this.props.chessboard.setPosition(this.props.fen[this.current], true);
-          this._toggleMoveInput(bTd);
+          this._activeMove(bTd);
         });
         if (move.bFen === this.current) {
-          this._toggleMoveInput(bTd);
+          this._activeMove(bTd);
         }
         tr.appendChild(bTd);
       }
