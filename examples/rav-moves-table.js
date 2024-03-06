@@ -99,7 +99,7 @@ const ravMovesTable = new RavMovesTable(
 const historyButtons = new HistoryButtons(
   document.querySelector('#historyButtons'),
   {
-    sanMovesTable: sanMovesTable
+    movesTable: ravMovesTable
   }
 );
 
