@@ -32,14 +32,6 @@ export class RavMovesTable extends AbstractComponent {
     });
   }
 
-  _description() {
-    const comment = Movetext.description(stateRavMovesTable?.breakdown[0]);
-
-    // TODO
-
-    return null;
-  }
-
   _moves() {
     let j = 1;
     let rows = [];
@@ -67,6 +59,18 @@ export class RavMovesTable extends AbstractComponent {
 
   domNode() {
     this._el.replaceChildren();
+
+    const description = Movetext.description(this.props.breakdown[0]);
+    
+    if (description) {
+      const descrTr = document.createElement('tr');
+      const descrTd = document.createElement('td');
+      const descrText = document.createTextNode(description);
+      descrTd.colSpan = 3;
+      descrTd.appendChild(descrText);
+      descrTr.appendChild(descrTd);
+      this._el.appendChild(descrTr);
+    }
 
     const moves = this._moves();
     const colors = this._color(moves);
