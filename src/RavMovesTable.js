@@ -40,6 +40,24 @@ export class RavMovesTable extends AbstractComponent {
     return null;
   }
 
+  moves() {
+    let j = 1;
+    let rows = [];
+    stateRavMovesTable?.breakdown.forEach((breakdown, i) => {
+      rows = [...rows, ...Movetext.toCommentedRows(breakdown, i)];
+    });
+    rows.forEach((row, i) => {
+      if (row.w !== '...') {
+        row.wFen = j;
+        j += 1;
+      }
+      if (row.b) {
+        row.bFen = j;
+        j += 1;
+      }
+    });
+  }
+
   domNode() {
     this._el.replaceChildren();
 
