@@ -91,4 +91,4 @@ sanMovesTable.props = {
   fen: fen
 };
 
-sanMovesTable.domNode();
+sanMovesTable.domElem();

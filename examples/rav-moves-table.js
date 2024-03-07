@@ -113,4 +113,4 @@ const gameActionsDropdown = new GameActionsDropdown(
   }
 );
 
-ravMovesTable.domNode();
+ravMovesTable.domElem();
