@@ -6,7 +6,7 @@ export default class AbstractComponent {
     this._el = el;
     this._props = props;
 
-    this.domNode();
+    this.domElem();
   }
 
   get props() {
@@ -17,7 +17,7 @@ export default class AbstractComponent {
     this._props = props;
   }
 
-  domNode() {
-    throw new Error("The domNode() method is an abstract method.");
+  domElem() {
+    throw new Error("The domElem() method is an abstract method.");
   }
 }

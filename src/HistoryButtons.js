@@ -1,13 +1,13 @@
 import AbstractComponent from '../src/AbstractComponent.js';
 
 export class HistoryButtons extends AbstractComponent {
-  domNode() {
+  domElem() {
     this._el.children.item(0).addEventListener('click', () => {
       this.props.movesTable.current = 0;
       this.props.movesTable.props.chessboard.setPosition(
         this.props.movesTable.props.fen[this.props.movesTable.current], true
       );
-      this.props.movesTable.domNode();
+      this.props.movesTable.domElem();
     });
 
     this._el.children.item(1).addEventListener('click', () => {
@@ -16,7 +16,7 @@ export class HistoryButtons extends AbstractComponent {
         this.props.movesTable.props.chessboard.setPosition(
           this.props.movesTable.props.fen[this.props.movesTable.current], true
         );
-        this.props.movesTable.domNode();
+        this.props.movesTable.domElem();
       }
     });
 
@@ -26,7 +26,7 @@ export class HistoryButtons extends AbstractComponent {
         this.props.movesTable.props.chessboard.setPosition(
           this.props.movesTable.props.fen[this.props.movesTable.current], true
         );
-        this.props.movesTable.domNode();
+        this.props.movesTable.domElem();
       }
     });
 
@@ -35,7 +35,7 @@ export class HistoryButtons extends AbstractComponent {
       this.props.movesTable.props.chessboard.setPosition(
         this.props.movesTable.props.fen[this.props.movesTable.current], true
       );
-      this.props.movesTable.domNode();
+      this.props.movesTable.domElem();
     });
   }
 }
