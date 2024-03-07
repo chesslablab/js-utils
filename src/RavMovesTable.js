@@ -12,6 +12,14 @@ export class RavMovesTable extends AbstractComponent {
     this._current = props.fen.length;
   }
 
+  get current() {
+    return this._current;
+  }
+
+  set current(current) {
+    this._current = current;
+  }
+
   _level(rows) {
     let haystack = Movetext.haystack(this.props.filtered);
     let needles = Movetext.needles(rows, this.props.breakdown);
