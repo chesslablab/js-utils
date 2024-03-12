@@ -46,7 +46,6 @@ const sanMovesTable = new SanMovesTable(
   document.querySelector('#sanMovesTable tbody'),
   {
     chessboard: chessboard,
-    inputHandler: inputHandler,
     movetext: movetext,
     fen: fen
   }

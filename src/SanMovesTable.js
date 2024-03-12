@@ -1,4 +1,5 @@
 import { Movetext } from '../src/common/Movetext.js';
+import { Pgn } from '../src/common/Pgn.js';
 import AbstractComponent from '../src/AbstractComponent.js';
 
 export const ACTIVE_MOVE = 'table-active';
@@ -46,9 +47,12 @@ export class SanMovesTable extends AbstractComponent {
   _activeMove(el) {
     Array.from(document.querySelectorAll(`.${ACTIVE_MOVE}`)).forEach(el => el.classList.remove(ACTIVE_MOVE));
     el.classList.add(ACTIVE_MOVE);
-    this.props.chessboard.disableMoveInput();
+    this.props.chessboard.state.inputWhiteEnabled = false;
+    this.props.chessboard.state.inputBlackEnabled = false;
     if (this.props.fen[this.current] === this.props.fen[this.props.fen.length - 1]) {
-      this.props.chessboard.enableMoveInput(this.props.inputHandler);
+      this.props.fen[this.current].split(' ')[1] === Pgn.symbol.WHITE
+        ? this.props.chessboard.state.inputWhiteEnabled = true
+        : this.props.chessboard.state.inputBlackEnabled = true;
     }
   }
 
