@@ -15,12 +15,12 @@ export class TimerTable extends AbstractComponent {
 
   count() {
     if (this.props.turn === Pgn.symbol.WHITE) {
-      if (this.props.timer.w > 0) {
-        this.props.timer.w -= 1;
+      if (this.props.w > 0) {
+        this.props.w -= 1;
       }
     } else {
-      if (this.props.timer.b > 0) {
-        this.props.timer.b -= 1;
+      if (this.props.b > 0) {
+        this.props.b -= 1;
       }
     }
 
@@ -31,15 +31,15 @@ export class TimerTable extends AbstractComponent {
     this._el.replaceChildren();
     const tr = document.createElement('tr');
     const wTd = document.createElement('td');
-    const wText = document.createTextNode(this._convert(this.props.timer.w));
+    const wText = document.createTextNode(this._convert(this.props.w));
     const bTd = document.createElement('td');
-    const bText = document.createTextNode(this._convert(this.props.timer.b));
+    const bText = document.createTextNode(this._convert(this.props.b));
     wTd.classList.add('text-end');
     wTd.appendChild(wText);
     bTd.appendChild(bText);
     tr.appendChild(wTd);
     tr.appendChild(bTd);
-    
+
     this._el.appendChild(tr);
   }
 }
