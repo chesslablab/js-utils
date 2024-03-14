@@ -23,4 +23,6 @@ const timerTable = new TimerTable(
   }
 );
 
-timerTable.domElem();
+setInterval(() => {
+  timerTable.count().domElem();
+}, 1000);
