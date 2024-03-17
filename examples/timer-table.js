@@ -22,5 +22,5 @@ const timerTable = new TimerTable(
 );
 
 setInterval(() => {
-  timerTable.count().domElem();
+  timerTable.count().mount();
 }, 1000);

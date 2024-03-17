@@ -27,7 +27,7 @@ export class TimerTable extends AbstractComponent {
     return this;
   }
 
-  domElem() {
+  mount() {
     this._el.replaceChildren();
     const tr = document.createElement('tr');
     const wTd = document.createElement('td');

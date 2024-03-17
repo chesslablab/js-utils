@@ -2,7 +2,7 @@ import { Opening } from '../src/common/Opening.js';
 import AbstractComponent from '../src/AbstractComponent.js';
 
 export class OpeningTable extends AbstractComponent {
-  domElem() {
+  mount() {
     const opening = Opening.byMovetext(this.props.movetext);
     this._el.replaceChildren();
     if (opening) {

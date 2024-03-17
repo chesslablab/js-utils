@@ -65,7 +65,7 @@ export class RavMovesTable extends AbstractComponent {
     el.classList.add(ACTIVE_MOVE);
   }
 
-  domElem() {
+  mount() {
     this._el.replaceChildren();
 
     const description = Movetext.description(this.props.breakdown[0]);
