@@ -9,6 +9,14 @@ export default class AbstractComponent {
     this.mount();
   }
 
+  get el() {
+    return this._el;
+  }
+
+  set el(el) {
+    this._el = el;
+  }
+
   get props() {
     return this._props;
   }
