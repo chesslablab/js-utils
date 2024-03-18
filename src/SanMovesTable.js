@@ -97,5 +97,7 @@ export class SanMovesTable extends AbstractComponent {
 
       this._el.appendChild(tr);
     });
+
+    this._el.parentNode.parentNode.scrollTop = this._el.parentNode.parentNode.scrollHeight;
   }
 }
