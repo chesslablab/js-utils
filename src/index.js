@@ -4,6 +4,7 @@ export * from './common/Opening.js';
 export * from './common/Pgn.js';
 export * from './GameActionsDropdown.js';
 export * from './HistoryButtons.js';
+export * from './MovesMetadataTable.js';
 export * from './OpeningTable.js';
 export * from './RavMovesTable.js';
 export * from './SanMovesTable.js';
