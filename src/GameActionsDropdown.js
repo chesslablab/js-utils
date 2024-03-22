@@ -17,7 +17,7 @@ export class GameActionsDropdown extends AbstractComponent {
 
     this._el.children.item(2).addEventListener('click', (event) => {
       event.preventDefault();
-      navigator.clipboard.writeText(this._props.movesTable.props.fen[this._props.movesTable.props.fen.length - 1]);
+      navigator.clipboard.writeText(this._props.movesTable.props.fen[this._props.movesTable.current]);
     });
   }
 }
