@@ -73,10 +73,20 @@ export class MovesMetadataTable extends AbstractComponent {
     this._el.replaceChildren();
 
     const tr = document.createElement('tr');
-    tr.appendChild(this._leftTd());
-    tr.appendChild(this._centerTd());
-    tr.appendChild(this._rightTd());
+    const leftTd = this._leftTd();
+    const centerTd = this._centerTd();
+    const rightTd = this._rightTd();
 
-    this._el.appendChild(tr);
+    tr.appendChild(leftTd);
+    tr.appendChild(centerTd);
+    tr.appendChild(rightTd);
+
+    if (
+      leftTd.firstChild?.nodeValue &&
+      centerTd.firstChild?.nodeValue &&
+      rightTd.firstChild?.nodeValue
+    ) {
+      this._el.appendChild(tr);
+    }
   }
 }
