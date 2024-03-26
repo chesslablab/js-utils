@@ -12,4 +12,14 @@ export class Opening {
   static byName = (name) => {
     return openings.filter(item => item.name.toLowerCase().includes(name.toLowerCase()));
   }
+
+  static byLongestMovetext = (movetext) => {
+    let items = openings.filter(item => movetext.startsWith(item.movetext));
+    let longest = items.reduce((a, b) => { return a.length > b.length ? a : b }, '');
+    if (longest) {
+      return [longest];
+    }
+
+    return null;
+  }
 }
