@@ -2,7 +2,7 @@ import { COLOR } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/Ches
 import { Movetext } from '../src/common/Movetext.js';
 import AbstractComponent from '../src/AbstractComponent.js';
 
-export class GameActionsDropdown extends AbstractComponent {
+export class BoardActionsDropdown extends AbstractComponent {
   mount() {
     this._el.children.item(0).addEventListener('click', (event) => {
       event.preventDefault();

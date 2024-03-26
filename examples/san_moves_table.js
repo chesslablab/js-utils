@@ -1,6 +1,6 @@
 import { INPUT_EVENT_TYPE, Chessboard } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/Chessboard.js";
 import { Markers } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/extensions/markers/Markers.js";
-import { GameActionsDropdown, HistoryButtons, OpeningTable, SanMovesTable } from '../src/index.js';
+import { BoardActionsDropdown, HistoryButtons, OpeningTable, SanMovesTable } from '../src/index.js';
 
 // -----------------------------------------------------------------------------
 // Initialization
@@ -65,8 +65,8 @@ const openingTable = new OpeningTable(
   }
 );
 
-const gameActionsDropdown = new GameActionsDropdown(
-  document.querySelector('#gameActionsDropdown ul'),
+const boardActionsDropdown = new BoardActionsDropdown(
+  document.querySelector('#boardActionsDropdown ul'),
   {
     movesTable: sanMovesTable
   }
