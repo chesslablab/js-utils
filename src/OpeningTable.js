@@ -3,13 +3,12 @@ import AbstractComponent from '../src/AbstractComponent.js';
 
 export class OpeningTable extends AbstractComponent {
   mount() {
-    const opening = Opening.byLongestMovetext(this.props.movetext);
     this._el.replaceChildren();
+    const opening = Opening.byLongestMovetext(this.props.movetext);
     if (opening) {
       const tr = document.createElement('tr');
       const td = document.createElement('td');
-      const tdText = document.createTextNode(`${opening[0].eco} ${opening[0].name}`);
-      td.appendChild(tdText);
+      td.appendChild(document.createTextNode(`${opening[0].eco} ${opening[0].name}`));
       tr.appendChild(td);
       this._el.appendChild(tr);
     }
