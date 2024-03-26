@@ -6,13 +6,7 @@ export class Opening {
   }
 
   static byMovetext = (movetext) => {
-    let items = openings.filter(item => movetext.startsWith(item.movetext));
-    let longest = items.reduce((a, b) => { return a.length > b.length ? a : b }, '');
-    if (longest) {
-      return [longest];
-    }
-
-    return null;
+    return openings.filter(item => item.movetext.startsWith(movetext));
   }
 
   static byName = (name) => {

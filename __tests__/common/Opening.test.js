@@ -19,20 +19,20 @@ describe('byEco()', () => {
 });
 
 describe('byMovetext()', () => {
-  it('is none starting with foo', () => {
-    expect(Opening.byMovetext('foo')).toBe(null);
+  it('none starting with foo', () => {
+    expect(Opening.byMovetext('foo')).toStrictEqual([]);
   });
-  it('is none starting with 2.d4 g6', () => {
-    expect(Opening.byMovetext('2.d4 g6')).toBe(null);
+  it('none starting with 2.d4 g6', () => {
+    expect(Opening.byMovetext('2.d4 g6')).toStrictEqual([]);
   });
   it('none starting with 2.Nf3 e4', () => {
-    expect(Opening.byMovetext('2.Nf3 e4')).toBe(null);
+    expect(Opening.byMovetext('2.Nf3 e4')).toStrictEqual([]);
   });
   it('is 1 starting with 1.e4 e5', () => {
-    expect(Opening.byMovetext('1.e4 e5').length).toBe(1);
+    expect(Opening.byMovetext('1.e4 e5').length).toBe(990);
   });
   it('is 1 starting with 1.e4 e5 2.Nf3', () => {
-    expect(Opening.byMovetext('1.e4 e5 2.Nf3').length).toBe(1);
+    expect(Opening.byMovetext('1.e4 e5 2.Nf3').length).toBe(651);
   });
 });
 
