@@ -1,6 +1,16 @@
 import { Nag } from './Nag.js';
 
 export class Movetext {
+  static toFigurine = (str) => {
+    str = str.replaceAll('R', '♖');
+    str = str.replaceAll('N', '♘');
+    str = str.replaceAll('B', '♗');
+    str = str.replaceAll('Q', '♕');
+    str = str.replaceAll('K', '♔');
+
+    return str;
+  }
+
   static description = (str) => {
     if (str.startsWith('{')) {
       let match = str.match(/{([^}]+)}/g)[0];
