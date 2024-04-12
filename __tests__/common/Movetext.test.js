@@ -1,5 +1,13 @@
 import { Movetext } from '../../src/common/Movetext';
 
+describe('toFigurine()', () => {
+  it('is 1.e4 e5 2.Nf3 Nc6', () => {
+    const string = '1.e4 e5 2.Nf3 Nc6';
+    const expected = '1.e4 e5 2.♘f3 ♘c6';
+    expect(Movetext.toFigurine(string)).toEqual(expected);
+  });
+});
+
 describe('toRows()', () => {
   it('is 1.e4', () => {
     const string = '1.e4';
