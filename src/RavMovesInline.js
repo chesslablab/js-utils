@@ -6,15 +6,15 @@ export class RavMovesInline extends AbstractRavMoves {
     this._el.replaceChildren();
 
     const description = Movetext.description(this.props.breakdown[0]);
-
+    
     if (description) {
-      const span = document.createElement('span');
-      span.appendChild(document.createTextNode(description));
-      this._el.appendChild(span);
+      const div = document.createElement('div');
+      div.appendChild(document.createTextNode(description));
+      div.classList.add('p-2');
+      this._el.appendChild(div);
     }
 
     const moves = this._moves();
-
     const colors = this._color(moves);
 
     moves.forEach((move, i) => {
