@@ -1,25 +1,7 @@
 import { Movetext } from '../src/common/Movetext.js';
-import AbstractComponent from '../src/AbstractComponent.js';
+import AbstractMoves from '../src/AbstractMoves.js';
 
-export const ACTIVE_MOVE = 'active-move';
-
-export class AbstractRavMoves extends AbstractComponent {
-  _current;
-
-  constructor(el, props) {
-    super(el, props);
-
-    this._current = props.fen.length;
-  }
-
-  get current() {
-    return this._current;
-  }
-
-  set current(current) {
-    this._current = current;
-  }
-
+export class AbstractRavMoves extends AbstractMoves {
   _level(rows) {
     let haystack = Movetext.haystack(this.props.filtered);
     let needles = Movetext.needles(rows, this.props.breakdown);
@@ -61,7 +43,7 @@ export class AbstractRavMoves extends AbstractComponent {
   }
 
   _activeMove(el) {
-    Array.from(document.querySelectorAll(`.${ACTIVE_MOVE}`)).forEach(el => el.classList.remove(ACTIVE_MOVE));
-    el.classList.add(ACTIVE_MOVE);
+    Array.from(document.querySelectorAll(`.${this._className}`)).forEach(el => el.classList.remove(this._className));
+    el.classList.add(this._className);
   }
 }
