@@ -54,7 +54,7 @@ const sanMovesTable = new SanMovesTable(
 const historyButtons = new HistoryButtons(
   document.querySelector('#historyButtons'),
   {
-    movesTable: sanMovesTable
+    moves: sanMovesTable
   }
 );
 
@@ -68,7 +68,7 @@ const openingTable = new OpeningTable(
 const boardActionsDropdown = new BoardActionsDropdown(
   document.querySelector('#boardActionsDropdown ul'),
   {
-    movesTable: sanMovesTable
+    moves: sanMovesTable
   }
 );
 

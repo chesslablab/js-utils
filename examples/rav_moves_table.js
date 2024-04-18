@@ -102,14 +102,14 @@ const ravMovesTable = new RavMovesTable(
 const historyButtons = new HistoryButtons(
   document.querySelector('#historyButtons'),
   {
-    movesTable: ravMovesTable
+    moves: ravMovesTable
   }
 );
 
 const boardActionsDropdown = new BoardActionsDropdown(
   document.querySelector('#boardActionsDropdown ul'),
   {
-    movesTable: ravMovesTable
+    moves: ravMovesTable
   }
 );
 
