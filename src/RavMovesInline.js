@@ -19,11 +19,10 @@ export class RavMovesInline extends AbstractRavMoves {
 
     moves.forEach((move, i) => {
       const span = document.createElement('span');
-      const wSpan = document.createElement('span');
-
       span.setAttribute('data-key', move.n);
 
       if (move.w !== '...') {
+        const wSpan = document.createElement('span');
         wSpan.style.backgroundColor = colors[i].background;
         wSpan.appendChild(document.createTextNode(`${move.n}.${move.w}`));
         wSpan.addEventListener('click', () => {
@@ -34,8 +33,8 @@ export class RavMovesInline extends AbstractRavMoves {
         if (move.wFen === this.current) {
           this._activeMove(wSpan);
         }
+        span.appendChild(wSpan);
       }
-      span.appendChild(wSpan);
 
       if (move.b) {
         const bSpan = document.createElement('span');
