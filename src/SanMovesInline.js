@@ -8,6 +8,8 @@ export class SanMovesInline extends AbstractSanMoves {
       const span = document.createElement('span');
       const wSpan = document.createElement('span');
 
+      span.setAttribute('data-key', move.n);
+
       wSpan.appendChild(document.createTextNode(`${move.n}.${move.w}`));
       wSpan.addEventListener('click', () => {
         this.current = move.wFen;

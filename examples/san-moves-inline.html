@@ -9,7 +9,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="san_moves_inline.js"></script>
     <style>
-      /* TODO */
+      .active-move {
+        background-color: rgba(0, 0, 0, 0.1) !important;
+      }
+
+      #sanMovesInline span[data-key] {
+        display: inline-flex;
+      }
+
+      #sanMovesInline span[data-key] span {
+        padding: 0.4rem;
+      }
+      
+      #sanMovesInline span[data-key] span:hover {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.05);
+      }
     </style>
   </head>
   <body>

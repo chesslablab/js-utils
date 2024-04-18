@@ -2,7 +2,7 @@ import { Movetext } from '../src/common/Movetext.js';
 import { Pgn } from '../src/common/Pgn.js';
 import AbstractComponent from '../src/AbstractComponent.js';
 
-export const ACTIVE_MOVE = 'table-active';
+export const ACTIVE_MOVE = 'active-move';
 
 export class AbstractSanMoves extends AbstractComponent {
   _current;
