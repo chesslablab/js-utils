@@ -1,26 +1,8 @@
 import { Movetext } from '../src/common/Movetext.js';
 import { Pgn } from '../src/common/Pgn.js';
-import AbstractComponent from '../src/AbstractComponent.js';
+import AbstractMoves from '../src/AbstractMoves.js';
 
-export const ACTIVE_MOVE = 'active-move';
-
-export class AbstractSanMoves extends AbstractComponent {
-  _current;
-
-  constructor(el, props) {
-    super(el, props);
-
-    this._current = props.fen.length;
-  }
-
-  get current() {
-    return this._current;
-  }
-
-  set current(current) {
-    this._current = current;
-  }
-
+export class AbstractSanMoves extends AbstractMoves {
   _moves() {
     let j = 1;
 
@@ -45,8 +27,8 @@ export class AbstractSanMoves extends AbstractComponent {
   }
 
   _activeMove(el) {
-    Array.from(document.querySelectorAll(`.${ACTIVE_MOVE}`)).forEach(el => el.classList.remove(ACTIVE_MOVE));
-    el.classList.add(ACTIVE_MOVE);
+    Array.from(document.querySelectorAll(`.${this._className}`)).forEach(el => el.classList.remove(this._className));
+    el.classList.add(this._className);
     this.props.chessboard.state.inputWhiteEnabled = false;
     this.props.chessboard.state.inputBlackEnabled = false;
     if (this.props.fen[this.current] === this.props.fen[this.props.fen.length - 1]) {
