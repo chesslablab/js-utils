@@ -35,7 +35,7 @@ const sanMovesTable = new SanMovesTable(
 const historyButtons = new HistoryButtons(
   document.querySelector('#historyButtons'),
   {
-    movesTable: sanMovesTable
+    moves: sanMovesTable
   }
 );
 

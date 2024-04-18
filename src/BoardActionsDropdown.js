@@ -6,20 +6,20 @@ export class BoardActionsDropdown extends AbstractComponent {
   mount() {
     this._el.children.item(0).addEventListener('click', (event) => {
       event.preventDefault();
-      this._props.movesTable.props.chessboard.setOrientation(
-        this._props.movesTable.props.chessboard.getOrientation() === COLOR.white ? COLOR.black : COLOR.white
+      this._props.moves.props.chessboard.setOrientation(
+        this._props.moves.props.chessboard.getOrientation() === COLOR.white ? COLOR.black : COLOR.white
       );
     });
 
     this._el.children.item(1).addEventListener('click', (event) => {
       event.preventDefault();
-      const back = (this._props.movesTable.props.fen.length - this._props.movesTable.current - 1) * -1;
-      navigator.clipboard.writeText(Movetext.substring(this._props.movesTable.props.movetext, back));
+      const back = (this._props.moves.props.fen.length - this._props.moves.current - 1) * -1;
+      navigator.clipboard.writeText(Movetext.substring(this._props.moves.props.movetext, back));
     });
 
     this._el.children.item(2).addEventListener('click', (event) => {
       event.preventDefault();
-      navigator.clipboard.writeText(this._props.movesTable.props.fen[this._props.movesTable.current]);
+      navigator.clipboard.writeText(this._props.moves.props.fen[this._props.moves.current]);
     });
   }
 }

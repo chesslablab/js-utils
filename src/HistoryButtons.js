@@ -3,39 +3,39 @@ import AbstractComponent from '../src/AbstractComponent.js';
 export class HistoryButtons extends AbstractComponent {
   mount() {
     this._el.children.item(0).addEventListener('click', () => {
-      this.props.movesTable.current = 0;
-      this.props.movesTable.props.chessboard.setPosition(
-        this.props.movesTable.props.fen[this.props.movesTable.current], true
+      this.props.moves.current = 0;
+      this.props.moves.props.chessboard.setPosition(
+        this.props.moves.props.fen[this.props.moves.current], true
       );
-      this.props.movesTable.mount();
+      this.props.moves.mount();
     });
 
     this._el.children.item(1).addEventListener('click', () => {
-      if (this.props.movesTable.current > 0) {
-        this.props.movesTable.current = this.props.movesTable.current - 1;
-        this.props.movesTable.props.chessboard.setPosition(
-          this.props.movesTable.props.fen[this.props.movesTable.current], true
+      if (this.props.moves.current > 0) {
+        this.props.moves.current = this.props.moves.current - 1;
+        this.props.moves.props.chessboard.setPosition(
+          this.props.moves.props.fen[this.props.moves.current], true
         );
-        this.props.movesTable.mount();
+        this.props.moves.mount();
       }
     });
 
     this._el.children.item(2).addEventListener('click', () => {
-      if (this.props.movesTable.current < this.props.movesTable.props.fen.length - 1) {
-        this.props.movesTable.current = this.props.movesTable.current + 1;
-        this.props.movesTable.props.chessboard.setPosition(
-          this.props.movesTable.props.fen[this.props.movesTable.current], true
+      if (this.props.moves.current < this.props.moves.props.fen.length - 1) {
+        this.props.moves.current = this.props.moves.current + 1;
+        this.props.moves.props.chessboard.setPosition(
+          this.props.moves.props.fen[this.props.moves.current], true
         );
-        this.props.movesTable.mount();
+        this.props.moves.mount();
       }
     });
 
     this._el.children.item(3).addEventListener('click', () => {
-      this.props.movesTable.current = this.props.movesTable.props.fen.length - 1;
-      this.props.movesTable.props.chessboard.setPosition(
-        this.props.movesTable.props.fen[this.props.movesTable.current], true
+      this.props.moves.current = this.props.moves.props.fen.length - 1;
+      this.props.moves.props.chessboard.setPosition(
+        this.props.moves.props.fen[this.props.moves.current], true
       );
-      this.props.movesTable.mount();
+      this.props.moves.mount();
     });
   }
 }

@@ -1,7 +1,7 @@
 import { Movetext } from '../src/common/Movetext.js';
 import AbstractComponent from '../src/AbstractComponent.js';
 
-export const ACTIVE_MOVE = 'table-active';
+export const ACTIVE_MOVE = 'active-move';
 
 export class RavMovesTable extends AbstractComponent {
   _current;

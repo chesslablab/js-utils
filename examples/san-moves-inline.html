@@ -7,14 +7,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/assets/chessboard.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="rav_moves_table.js"></script>
+    <script type="module" src="san_moves_inline.js"></script>
     <style>
-      div.table-responsive:has(#ravMovesTable) {
-        height: 465px;
-        overflow-y: scroll;
+      .active-move {
+        background-color: rgba(0, 0, 0, 0.1) !important;
       }
-      #ravMovesTable td:hover {
+
+      #sanMovesInline span[data-key] {
+        display: inline-flex;
+      }
+
+      #sanMovesInline span[data-key] span {
+        padding: 0.4rem;
+      }
+      
+      #sanMovesInline span[data-key] span:hover {
         cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.05);
       }
     </style>
   </head>
@@ -25,7 +34,7 @@
         An easy-to-use JavaScript module library of chess components and utilities.
       </p>
       <hr class="hr">
-      <h5>HTML Table of Recursive Annotation Variation (RAV) Moves</h5>
+      <h5>Inline Standard Algebraic Notation (SAN) Moves</h5>
       <div class="row gy-4">
         <div class="col-md-6">
           <div id="chessboard"></div>
@@ -68,10 +77,7 @@
             <button class="btn btn-light" type="button"><i class="bi bi-caret-right-fill"></i></button>
             <button class="btn btn-light rounded-0" type="button"><i class="bi bi-skip-forward-fill"></i></button>
           </div>
-          <div class="table-responsive">
-            <table id="ravMovesTable" class="table table-hover">
-              <tbody></tbody>
-            </table>
+          <div id="sanMovesInline">
           </div>
           <table id="openingTable" class="table table-light text-center">
             <tbody></tbody>
