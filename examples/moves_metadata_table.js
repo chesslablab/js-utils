@@ -1,5 +1,5 @@
 import { Chessboard } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/Chessboard.js";
-import { MovesMetadataTable, HistoryButtons, OpeningTable, SanMoves } from '../src/index.js';
+import { MovesMetadataTable, HistoryButtons, OpeningTable, SanMovesFactory } from '../src/index.js';
 import * as format from '../src/index.js';
 
 // -----------------------------------------------------------------------------
@@ -24,7 +24,7 @@ const chessboard = new Chessboard(
   }
 );
 
-const sanMoves = SanMoves.create(
+const sanMoves = SanMovesFactory.create(
   format.TABLE,
   document.querySelector('#sanMovesTable tbody'),
   {

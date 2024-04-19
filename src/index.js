@@ -9,7 +9,7 @@ export * from './MovesMetadataTable.js';
 export * from './OpeningTable.js';
 export * from './RavMovesInline.js';
 export * from './RavMovesTable.js';
-export * from './SanMoves.js';
+export * from './SanMovesFactory.js';
 export * from './SanMovesInline.js';
 export * from './SanMovesTable.js';
 export * from './TimerTable.js';
