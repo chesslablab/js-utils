@@ -1,7 +1,6 @@
 import { INPUT_EVENT_TYPE, Chessboard } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/Chessboard.js";
 import { Markers } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/extensions/markers/Markers.js";
-import { BoardActionsDropdown, HistoryButtons, OpeningTable, SanMovesFactory } from '../src/index.js';
-import * as format from '../src/index.js';
+import { FORMAT_INLINE, BoardActionsDropdown, HistoryButtons, OpeningTable, SanMovesFactory } from '../src/index.js';
 
 // -----------------------------------------------------------------------------
 // Initialization
@@ -44,7 +43,7 @@ const inputHandler = (event) => {
 chessboard.enableMoveInput(inputHandler);
 
 const sanMoves = SanMovesFactory.create(
-  format.INLINE,
+  FORMAT_INLINE,
   document.querySelector('#sanMovesInline'),
   {
     chessboard: chessboard,

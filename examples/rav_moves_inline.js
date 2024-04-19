@@ -1,7 +1,6 @@
 import { Chessboard } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/Chessboard.js";
 import { Markers } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/extensions/markers/Markers.js";
-import { BoardActionsDropdown, HistoryButtons, OpeningTable, RavMovesFactory } from '../src/index.js';
-import * as format from '../src/index.js';
+import { FORMAT_INLINE, BoardActionsDropdown, HistoryButtons, OpeningTable, RavMovesFactory } from '../src/index.js';
 
 // -----------------------------------------------------------------------------
 // Initialization
@@ -157,7 +156,7 @@ const chessboard = new Chessboard(
 );
 
 const ravMoves = RavMovesFactory.create(
-  format.INLINE,
+  FORMAT_INLINE,
   document.querySelector('#ravMovesInline'),
   {
     ...props,

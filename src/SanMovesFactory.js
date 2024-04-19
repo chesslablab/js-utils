@@ -1,9 +1,8 @@
-import { SanMovesInline, SanMovesTable } from '../src/index.js';
-import * as format from '../src/index.js';
+import { FORMAT_TABLE, SanMovesInline, SanMovesTable } from '../src/index.js';
 
 export class SanMovesFactory {
   static create = (fmt, el, props) => {
-    if (fmt === format.TABLE) {
+    if (fmt === FORMAT_TABLE) {
       return new SanMovesTable(el, props);
     }
 
