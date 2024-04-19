@@ -155,7 +155,7 @@ const chessboard = new Chessboard(
   }
 );
 
-const ravMoves = RavMovesFactory.create(
+const ravMovesBrowser = RavMovesFactory.create(
   FORMAT_INLINE,
   document.querySelector('#movesBrowser'),
   {
@@ -167,15 +167,15 @@ const ravMoves = RavMovesFactory.create(
 const historyButtons = new HistoryButtons(
   document.querySelector('#historyButtons'),
   {
-    moves: ravMoves
+    movesBrowser: ravMovesBrowser
   }
 );
 
 const boardActionsDropdown = new BoardActionsDropdown(
   document.querySelector('#boardActionsDropdown ul'),
   {
-    moves: ravMoves
+    movesBrowser: ravMovesBrowser
   }
 );
 
-ravMoves.mount();
+ravMovesBrowser.mount();

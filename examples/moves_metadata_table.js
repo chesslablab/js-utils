@@ -23,7 +23,7 @@ const chessboard = new Chessboard(
   }
 );
 
-const sanMoves = SanMovesFactory.create(
+const sanMovesBrowser = SanMovesFactory.create(
   FORMAT_TABLE,
   document.querySelector('#movesBrowser'),
   {
@@ -36,7 +36,7 @@ const sanMoves = SanMovesFactory.create(
 const historyButtons = new HistoryButtons(
   document.querySelector('#historyButtons'),
   {
-    moves: sanMoves
+    movesBrowser: sanMovesBrowser
   }
 );
 
@@ -63,4 +63,4 @@ const movesMetadataTable = new MovesMetadataTable(
 );
 
 movesMetadataTable.mount();
-sanMoves.mount();
+sanMovesBrowser.mount();

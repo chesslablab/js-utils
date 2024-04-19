@@ -42,7 +42,7 @@ const inputHandler = (event) => {
 
 chessboard.enableMoveInput(inputHandler);
 
-const sanMoves = SanMovesFactory.create(
+const sanMovesBrowser = SanMovesFactory.create(
   FORMAT_INLINE,
   document.querySelector('#movesBrowser'),
   {
@@ -55,7 +55,7 @@ const sanMoves = SanMovesFactory.create(
 const historyButtons = new HistoryButtons(
   document.querySelector('#historyButtons'),
   {
-    moves: sanMoves
+    movesBrowser: sanMovesBrowser
   }
 );
 
@@ -69,7 +69,7 @@ const openingTable = new OpeningTable(
 const boardActionsDropdown = new BoardActionsDropdown(
   document.querySelector('#boardActionsDropdown ul'),
   {
-    moves: sanMoves
+    movesBrowser: sanMovesBrowser
   }
 );
 
@@ -85,10 +85,10 @@ movetext = '1.e4 e5 2.Nf3 Nc6';
 
 fen.push(position);
 
-sanMoves.props = {
-  ...sanMoves.props,
+sanMovesBrowser.props = {
+  ...sanMovesBrowser.props,
   movetext: movetext,
   fen: fen
 };
 
-sanMoves.mount();
+sanMovesBrowser.mount();
