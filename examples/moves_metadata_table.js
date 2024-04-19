@@ -25,7 +25,7 @@ const chessboard = new Chessboard(
 
 const sanMoves = SanMovesFactory.create(
   FORMAT_TABLE,
-  document.querySelector('#sanMovesTable tbody'),
+  document.querySelector('#sanMoves'),
   {
     chessboard: chessboard,
     movetext: movetext,

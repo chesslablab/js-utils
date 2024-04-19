@@ -14,20 +14,31 @@
         color: #fff !important;
       }
 
-      div.table-responsive:has(#sanMovesTable) {
+      #sanMoves.table {
+        display: table;
+        width: 100%;
         height: 465px;
         overflow-y: scroll;
       }
 
-      #sanMovesTable td:hover {
+      #sanMoves.table div span:nth-child(1) {
+        width: 20%;
+      }
+
+      #sanMoves.table div span:nth-child(2),
+      #sanMoves.table div span:nth-child(3) {
+        width: 40%;
+      }
+
+      #sanMoves.table span {
+        padding: 0.35rem;
+        display: inline-block;
+      }
+
+      #sanMoves.table span:hover {
         cursor: pointer;
         background-color: #6c757d !important;
         color: #fff !important;
-      }
-
-      #sanMovesTable {
-        width: 100%;
-        display: table;
       }
     </style>
   </head>
@@ -81,11 +92,7 @@
             <button class="btn btn-light" type="button"><i class="bi bi-caret-right-fill"></i></button>
             <button class="btn btn-light rounded-0" type="button"><i class="bi bi-skip-forward-fill"></i></button>
           </div>
-          <div class="table-responsive">
-            <table id="sanMovesTable" class="table">
-              <tbody></tbody>
-            </table>
-          </div>
+          <div id="sanMoves"></div>
           <table id="openingTable" class="table table-light text-center">
             <tbody></tbody>
           </table>

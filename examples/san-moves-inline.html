@@ -14,16 +14,16 @@
         color: #fff !important;
       }
 
-      #sanMovesInline span[data-key] {
+      #sanMoves.inline span[data-key] {
         display: inline-block;
         line-height: 2rem;
       }
 
-      #sanMovesInline span[data-key] span {
+      #sanMoves.inline span[data-key] span {
         padding: 0.4rem;
       }
 
-      #sanMovesInline span[data-key] span:hover {
+      #sanMoves.inline span[data-key] span:hover {
         cursor: pointer;
         background-color: #6c757d !important;
         color: #fff !important;
@@ -80,8 +80,7 @@
             <button class="btn btn-light" type="button"><i class="bi bi-caret-right-fill"></i></button>
             <button class="btn btn-light rounded-0" type="button"><i class="bi bi-skip-forward-fill"></i></button>
           </div>
-          <div id="sanMovesInline">
-          </div>
+          <div id="sanMoves"></div>
           <table id="openingTable" class="table table-light text-center">
             <tbody></tbody>
           </table>

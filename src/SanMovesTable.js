@@ -5,10 +5,10 @@ export class SanMovesTable extends AbstractSanMoves {
     this._el.replaceChildren();
 
     this._moves().forEach(move => {
-      const tr = document.createElement('tr');
-      const nTd = document.createElement('td');
+      const tr = document.createElement('div');
+      const nTd = document.createElement('span');
       const nText = document.createTextNode(move.n);
-      const wTd = document.createElement('td');
+      const wTd = document.createElement('span');
       const wText = document.createTextNode(move.w);
 
       nTd.appendChild(nText);
@@ -26,7 +26,7 @@ export class SanMovesTable extends AbstractSanMoves {
       tr.appendChild(wTd);
 
       if (move.b) {
-        const bTd = document.createElement('td');
+        const bTd = document.createElement('span');
         const bText = document.createTextNode(move.b);
         bTd.appendChild(bText);
         bTd.addEventListener('click', () => {
