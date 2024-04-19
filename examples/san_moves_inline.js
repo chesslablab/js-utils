@@ -1,6 +1,7 @@
 import { INPUT_EVENT_TYPE, Chessboard } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/Chessboard.js";
 import { Markers } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/extensions/markers/Markers.js";
-import { BoardActionsDropdown, HistoryButtons, OpeningTable, SanMovesInline } from '../src/index.js';
+import { BoardActionsDropdown, HistoryButtons, OpeningTable, SanMoves } from '../src/index.js';
+import * as format from '../src/index.js';
 
 // -----------------------------------------------------------------------------
 // Initialization
@@ -42,7 +43,8 @@ const inputHandler = (event) => {
 
 chessboard.enableMoveInput(inputHandler);
 
-const sanMovesInline = new SanMovesInline(
+const sanMoves = SanMoves.create(
+  format.INLINE,
   document.querySelector('#sanMovesInline'),
   {
     chessboard: chessboard,
@@ -54,7 +56,7 @@ const sanMovesInline = new SanMovesInline(
 const historyButtons = new HistoryButtons(
   document.querySelector('#historyButtons'),
   {
-    moves: sanMovesInline
+    moves: sanMoves
   }
 );
 
@@ -68,7 +70,7 @@ const openingTable = new OpeningTable(
 const boardActionsDropdown = new BoardActionsDropdown(
   document.querySelector('#boardActionsDropdown ul'),
   {
-    moves: sanMovesInline
+    moves: sanMoves
   }
 );
 
@@ -84,10 +86,10 @@ movetext = '1.e4 e5 2.Nf3 Nc6';
 
 fen.push(position);
 
-sanMovesInline.props = {
-  ...sanMovesInline.props,
+sanMoves.props = {
+  ...sanMoves.props,
   movetext: movetext,
   fen: fen
 };
 
-sanMovesInline.mount();
+sanMoves.mount();
