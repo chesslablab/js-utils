@@ -1,6 +1,7 @@
 import { Chessboard } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/Chessboard.js";
 import { Markers } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/extensions/markers/Markers.js";
-import { BoardActionsDropdown, HistoryButtons, OpeningTable, RavMovesTable } from '../src/index.js';
+import { BoardActionsDropdown, HistoryButtons, OpeningTable, RavMovesFactory } from '../src/index.js';
+import * as format from '../src/index.js';
 
 // -----------------------------------------------------------------------------
 // Initialization
@@ -155,7 +156,8 @@ const chessboard = new Chessboard(
   }
 );
 
-const ravMovesTable = new RavMovesTable(
+const ravMoves = RavMovesFactory.create(
+  format.TABLE,
   document.querySelector('#ravMovesTable tbody'),
   {
     ...props,
@@ -166,15 +168,15 @@ const ravMovesTable = new RavMovesTable(
 const historyButtons = new HistoryButtons(
   document.querySelector('#historyButtons'),
   {
-    moves: ravMovesTable
+    moves: ravMoves
   }
 );
 
 const boardActionsDropdown = new BoardActionsDropdown(
   document.querySelector('#boardActionsDropdown ul'),
   {
-    moves: ravMovesTable
+    moves: ravMoves
   }
 );
 
-ravMovesTable.mount();
+ravMoves.mount();

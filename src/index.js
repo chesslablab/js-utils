@@ -7,6 +7,7 @@ export * from './format.js';
 export * from './HistoryButtons.js';
 export * from './MovesMetadataTable.js';
 export * from './OpeningTable.js';
+export * from './RavMovesFactory.js';
 export * from './RavMovesInline.js';
 export * from './RavMovesTable.js';
 export * from './SanMovesFactory.js';
