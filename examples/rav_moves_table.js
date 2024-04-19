@@ -157,7 +157,7 @@ const chessboard = new Chessboard(
 
 const ravMoves = RavMovesFactory.create(
   FORMAT_TABLE,
-  document.querySelector('#ravMoves'),
+  document.querySelector('#moves'),
   {
     ...props,
     chessboard: chessboard

@@ -1,0 +1,51 @@
+.active-move {
+  background-color: #6c757d !important;
+  color: #fff !important;
+}
+
+#moves.inline {
+  height: 450px;
+  overflow-y: scroll;
+  margin-bottom: 0;
+}
+
+#moves.inline span[data-key] {
+  display: inline-block;
+  line-height: 2rem;
+}
+
+#moves.inline span[data-key] span {
+  padding: 0.4rem;
+}
+
+#moves.inline span[data-key] span:hover {
+  cursor: pointer;
+  background-color: #6c757d !important;
+  color: #fff !important;
+}
+
+#moves.table {
+  height: 450px;
+  overflow-y: scroll;
+  margin-bottom: 0;
+}
+
+#moves.table div span:nth-child(1) {
+  width: 20%;
+}
+
+#moves.table div span:nth-child(2),
+#moves.table div span:nth-child(3) {
+  width: 40%;
+}
+
+#moves.table span {
+  padding: 0.35rem;
+  display: inline-block;
+}
+
+#moves.table span:hover {
+  cursor: pointer;
+  background-color: #6c757d !important;
+  color: #fff !important;
+}

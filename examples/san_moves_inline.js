@@ -44,7 +44,7 @@ chessboard.enableMoveInput(inputHandler);
 
 const sanMoves = SanMovesFactory.create(
   FORMAT_INLINE,
-  document.querySelector('#sanMoves'),
+  document.querySelector('#moves'),
   {
     chessboard: chessboard,
     movetext: movetext,
