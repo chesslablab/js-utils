@@ -3,56 +3,56 @@
   color: #fff !important;
 }
 
-#moves .description {
+#moveBrowser .description {
   padding: 0.5rem;
 }
 
-#moves.inline {
+#moveBrowser.inline {
   height: 450px;
   overflow-y: scroll;
   margin-bottom: 0;
 }
 
-#moves.inline span[data-key] {
+#moveBrowser.inline span[data-key] {
   display: inline-block;
   line-height: 2rem;
 }
 
-#moves.inline span[data-key] span {
+#moveBrowser.inline span[data-key] span {
   padding: 0.4rem;
 }
 
-#moves.inline span[data-key] span:hover {
+#moveBrowser.inline span[data-key] span:hover {
   cursor: pointer;
   background-color: #6c757d !important;
   color: #fff !important;
 }
 
-#moves.table {
+#moveBrowser.table {
   height: 450px;
   overflow-y: scroll;
   margin-bottom: 0;
 }
 
-#moves.table div {
+#moveBrowser.table div {
   display: flex;
 }
 
-#moves.table div span:nth-child(1) {
+#moveBrowser.table div span:nth-child(1) {
   width: 20%;
 }
 
-#moves.table div span:nth-child(2),
-#moves.table div span:nth-child(3) {
+#moveBrowser.table div span:nth-child(2),
+#moveBrowser.table div span:nth-child(3) {
   width: 40%;
 }
 
-#moves.table span {
+#moveBrowser.table span {
   padding: 0.35rem;
   display: inline-block;
 }
 
-#moves.table span:hover {
+#moveBrowser.table span:hover {
   cursor: pointer;
   background-color: #6c757d !important;
   color: #fff !important;
