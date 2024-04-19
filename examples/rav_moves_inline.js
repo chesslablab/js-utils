@@ -1,6 +1,15 @@
-import { Chessboard } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/Chessboard.js";
-import { Markers } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/extensions/markers/Markers.js";
-import { FORMAT_INLINE, BoardActionsDropdown, HistoryButtons, OpeningTable, RavMovesFactory } from '../src/index.js';
+import {
+  Chessboard,
+  Markers
+} from "https://cdn.jsdelivr.net/npm/@chesslablab/cmblab@0.0.1/src/index.min.js";
+
+import {
+  FORMAT_INLINE,
+  BoardActionsDropdown,
+  HistoryButtons,
+  OpeningTable,
+  RavMovesFactory
+} from '../src/index.js';
 
 // -----------------------------------------------------------------------------
 // Initialization

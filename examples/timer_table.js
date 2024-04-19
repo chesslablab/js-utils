@@ -1,6 +1,12 @@
-import { FEN, Chessboard } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/Chessboard.js";
-import { Markers } from "https://cdn.jsdelivr.net/npm/cm-chessboard@8.5.0/src/extensions/markers/Markers.js";
-import { TimerTable } from '../src/index.js';
+import {
+  FEN,
+  Chessboard,
+  Markers
+} from "https://cdn.jsdelivr.net/npm/@chesslablab/cmblab@0.0.1/src/index.min.js";
+
+import {
+  TimerTable
+} from '../src/index.js';
 
 const chessboard = new Chessboard(
   document.getElementById('chessboard'),
