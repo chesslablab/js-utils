@@ -14,12 +14,28 @@
         color: #fff !important;
       }
 
-      div.table-responsive:has(#ravMovesTable) {
+      #ravMoves.table {
+        display: table;
+        width: 100%;
         height: 465px;
         overflow-y: scroll;
       }
 
-      #ravMovesTable td:hover {
+      #ravMoves.table div span:nth-child(1) {
+        width: 20%;
+      }
+
+      #ravMoves.table div span:nth-child(2),
+      #ravMoves.table div span:nth-child(3) {
+        width: 40%;
+      }
+
+      #ravMoves.table span {
+        padding: 0.35rem;
+        display: inline-block;
+      }
+
+      #ravMoves.table span:hover {
         cursor: pointer;
         background-color: #6c757d !important;
         color: #fff !important;

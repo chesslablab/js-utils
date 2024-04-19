@@ -8,58 +8,51 @@ export class RavMovesTable extends AbstractRavMoves {
     const description = Movetext.description(this.props.breakdown[0]);
 
     if (description) {
-      const descrTr = document.createElement('div');
-      const descrTd = document.createElement('span');
-      const descrText = document.createTextNode(description);
-      descrTd.colSpan = 3;
-      descrTd.appendChild(descrText);
-      descrTr.appendChild(descrTd);
-      this._el.appendChild(descrTr);
+      const descrDiv = document.createElement('div');
+      descrDiv.appendChild(document.createTextNode(description));
+      this._el.appendChild(descrDiv);
     }
 
     const moves = this._moves();
     const colors = this._color(moves);
 
     moves.forEach((move, i) => {
-      const tr = document.createElement('div');
-      const nTd = document.createElement('span');
-      const nText = document.createTextNode(move.n);
-      const wTd = document.createElement('span');
-      const wText = document.createTextNode(move.w);
+      const div = document.createElement('div');
+      const nSpan = document.createElement('span');
+      const wSpan = document.createElement('span');
 
-      nTd.style.backgroundColor = colors[i].background;
-      nTd.appendChild(nText);
-      tr.appendChild(nTd);
+      nSpan.style.backgroundColor = colors[i].background;
+      nSpan.appendChild(document.createTextNode(move.n));
+      div.appendChild(nSpan);
 
-      wTd.style.backgroundColor = colors[i].background;
-      wTd.appendChild(wText);
-      wTd.addEventListener('click', () => {
+      wSpan.style.backgroundColor = colors[i].background;
+      wSpan.appendChild(document.createTextNode(move.w));
+      wSpan.addEventListener('click', () => {
         this.current = move.wFen;
         this.props.chessboard.setPosition(this.props.fen[this.current], true);
-        this._activeMove(wTd);
+        this._activeMove(wSpan);
       });
       if (move.wFen === this.current) {
-        this._activeMove(wTd);
+        this._activeMove(wSpan);
       }
-      tr.appendChild(wTd);
+      div.appendChild(wSpan);
 
       if (move.b) {
-        const bTd = document.createElement('span');
-        const bText = document.createTextNode(move.b);
-        bTd.style.backgroundColor = colors[i].background;
-        bTd.appendChild(bText);
-        bTd.addEventListener('click', () => {
+        const bSpan = document.createElement('span');
+        bSpan.style.backgroundColor = colors[i].background;
+        bSpan.appendChild(document.createTextNode(move.b));
+        bSpan.addEventListener('click', () => {
           this.current = move.bFen;
           this.props.chessboard.setPosition(this.props.fen[this.current], true);
-          this._activeMove(bTd);
+          this._activeMove(bSpan);
         });
         if (move.bFen === this.current) {
-          this._activeMove(bTd);
+          this._activeMove(bSpan);
         }
-        tr.appendChild(bTd);
+        div.appendChild(bSpan);
       }
 
-      this._el.appendChild(tr);
+      this._el.appendChild(div);
     });
   }
 }
