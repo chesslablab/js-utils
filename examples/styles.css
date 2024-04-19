@@ -3,56 +3,56 @@
   color: #fff !important;
 }
 
-#moveBrowser .description {
+#movesBrowser .description {
   padding: 0.5rem;
 }
 
-#moveBrowser.inline {
+#movesBrowser.inline {
   height: 450px;
   overflow-y: scroll;
   margin-bottom: 0;
 }
 
-#moveBrowser.inline span[data-key] {
+#movesBrowser.inline span[data-key] {
   display: inline-block;
   line-height: 2rem;
 }
 
-#moveBrowser.inline span[data-key] span {
+#movesBrowser.inline span[data-key] span {
   padding: 0.4rem;
 }
 
-#moveBrowser.inline span[data-key] span:hover {
+#movesBrowser.inline span[data-key] span:hover {
   cursor: pointer;
   background-color: #6c757d !important;
   color: #fff !important;
 }
 
-#moveBrowser.table {
+#movesBrowser.table {
   height: 450px;
   overflow-y: scroll;
   margin-bottom: 0;
 }
 
-#moveBrowser.table div {
+#movesBrowser.table div {
   display: flex;
 }
 
-#moveBrowser.table div span:nth-child(1) {
+#movesBrowser.table div span:nth-child(1) {
   width: 20%;
 }
 
-#moveBrowser.table div span:nth-child(2),
-#moveBrowser.table div span:nth-child(3) {
+#movesBrowser.table div span:nth-child(2),
+#movesBrowser.table div span:nth-child(3) {
   width: 40%;
 }
 
-#moveBrowser.table span {
+#movesBrowser.table span {
   padding: 0.35rem;
   display: inline-block;
 }
 
-#moveBrowser.table span:hover {
+#movesBrowser.table span:hover {
   cursor: pointer;
   background-color: #6c757d !important;
   color: #fff !important;
