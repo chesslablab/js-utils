@@ -2,6 +2,16 @@ import { Movetext } from '../src/common/Movetext.js';
 import AbstractMoves from '../src/AbstractMoves.js';
 
 export class AbstractRavMoves extends AbstractMoves {
+  _description() {
+    const description = Movetext.description(this.props.breakdown[0]);
+    if (description) {
+      const divDescr = document.createElement('div');
+      divDescr.appendChild(document.createTextNode(description));
+      divDescr.classList.add('description');
+      this._el.appendChild(divDescr);
+    }
+  }
+
   _level(rows) {
     let haystack = Movetext.haystack(this.props.filtered);
     let needles = Movetext.needles(rows, this.props.breakdown);

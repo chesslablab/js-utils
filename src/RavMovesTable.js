@@ -1,17 +1,10 @@
-import { Movetext } from '../src/common/Movetext.js';
 import { AbstractRavMoves } from '../src/AbstractRavMoves.js';
 
 export class RavMovesTable extends AbstractRavMoves {
   mount() {
     this._el.replaceChildren();
 
-    const description = Movetext.description(this.props.breakdown[0]);
-
-    if (description) {
-      const descrDiv = document.createElement('div');
-      descrDiv.appendChild(document.createTextNode(description));
-      this._el.appendChild(descrDiv);
-    }
+    this._description();
 
     const moves = this._moves();
     const colors = this._color(moves);

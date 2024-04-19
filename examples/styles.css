@@ -3,6 +3,10 @@
   color: #fff !important;
 }
 
+#moves .description {
+  padding: 0.5rem;
+}
+
 #moves.inline {
   height: 450px;
   overflow-y: scroll;
