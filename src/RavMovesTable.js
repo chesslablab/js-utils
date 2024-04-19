@@ -8,8 +8,8 @@ export class RavMovesTable extends AbstractRavMoves {
     const description = Movetext.description(this.props.breakdown[0]);
 
     if (description) {
-      const descrTr = document.createElement('tr');
-      const descrTd = document.createElement('td');
+      const descrTr = document.createElement('div');
+      const descrTd = document.createElement('span');
       const descrText = document.createTextNode(description);
       descrTd.colSpan = 3;
       descrTd.appendChild(descrText);
@@ -21,10 +21,10 @@ export class RavMovesTable extends AbstractRavMoves {
     const colors = this._color(moves);
 
     moves.forEach((move, i) => {
-      const tr = document.createElement('tr');
-      const nTd = document.createElement('td');
+      const tr = document.createElement('div');
+      const nTd = document.createElement('span');
       const nText = document.createTextNode(move.n);
-      const wTd = document.createElement('td');
+      const wTd = document.createElement('span');
       const wText = document.createTextNode(move.w);
 
       nTd.style.backgroundColor = colors[i].background;
@@ -44,7 +44,7 @@ export class RavMovesTable extends AbstractRavMoves {
       tr.appendChild(wTd);
 
       if (move.b) {
-        const bTd = document.createElement('td');
+        const bTd = document.createElement('span');
         const bText = document.createTextNode(move.b);
         bTd.style.backgroundColor = colors[i].background;
         bTd.appendChild(bText);
