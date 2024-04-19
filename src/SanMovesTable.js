@@ -5,42 +5,39 @@ export class SanMovesTable extends AbstractSanMoves {
     this._el.replaceChildren();
 
     this._moves().forEach(move => {
-      const tr = document.createElement('div');
-      const nTd = document.createElement('span');
-      const nText = document.createTextNode(move.n);
-      const wTd = document.createElement('span');
-      const wText = document.createTextNode(move.w);
+      const div = document.createElement('div');
+      const nSpan = document.createElement('span');
+      const wSpan = document.createElement('span');
 
-      nTd.appendChild(nText);
-      tr.appendChild(nTd);
+      nSpan.appendChild(document.createTextNode(move.n));
+      div.appendChild(nSpan);
 
-      wTd.appendChild(wText);
-      wTd.addEventListener('click', () => {
+      wSpan.appendChild(document.createTextNode(move.w));
+      wSpan.addEventListener('click', () => {
         this.current = move.wFen;
         this.props.chessboard.setPosition(this.props.fen[this.current], true);
-        this._activeMove(wTd);
+        this._activeMove(wSpan);
       });
       if (move.wFen === this.current) {
-        this._activeMove(wTd);
+        this._activeMove(wSpan);
       }
-      tr.appendChild(wTd);
+      div.appendChild(wSpan);
 
       if (move.b) {
-        const bTd = document.createElement('span');
-        const bText = document.createTextNode(move.b);
-        bTd.appendChild(bText);
-        bTd.addEventListener('click', () => {
+        const bSpan = document.createElement('span');
+        bSpan.appendChild(document.createTextNode(move.b));
+        bSpan.addEventListener('click', () => {
           this.current = move.bFen;
           this.props.chessboard.setPosition(this.props.fen[this.current], true);
-          this._activeMove(bTd);
+          this._activeMove(bSpan);
         });
         if (move.bFen === this.current) {
-          this._activeMove(bTd);
+          this._activeMove(bSpan);
         }
-        tr.appendChild(bTd);
+        div.appendChild(bSpan);
       }
 
-      this._el.appendChild(tr);
+      this._el.appendChild(div);
     });
 
     this._el.parentNode.parentNode.scrollTop = this._el.parentNode.parentNode.scrollHeight;
