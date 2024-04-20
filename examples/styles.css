@@ -1,3 +1,15 @@
+#movesMetadataTable tr td:nth-child(1) {
+  text-align: left;
+}
+
+#movesMetadataTable tr td:nth-child(2) {
+  text-align: center;
+}
+
+#movesMetadataTable tr td:nth-child(3) {
+  text-align: right;
+}
+
 .active-move {
   background-color: #6c757d !important;
   color: #fff !important;

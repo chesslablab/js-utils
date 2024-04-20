@@ -47,7 +47,6 @@ export class MovesMetadataTable extends AbstractComponent {
     }
 
     centerTd.appendChild(document.createTextNode(data.slice(0, -2)));
-    centerTd.classList.add('text-center');
 
     return centerTd;
   }
@@ -63,8 +62,6 @@ export class MovesMetadataTable extends AbstractComponent {
     if (this.props?.BlackElo) {
       rightTd.appendChild(document.createTextNode(`${this.props.BlackElo}`));
     }
-
-    rightTd.classList.add('text-end');
 
     return rightTd;
   }
