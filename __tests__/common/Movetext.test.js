@@ -4,7 +4,7 @@ describe('notation()', () => {
   it('is 1.e4 e5 2.♘f3 ♘c6', () => {
     const string = '1.e4 e5 2.Nf3 Nc6';
     const expected = '1.e4 e5 2.♘f3 ♘c6';
-    expect(Movetext.notation('fan', string)).toEqual(expected);
+    expect(Movetext.notation(null, string)).toEqual(expected);
   });
 });
 

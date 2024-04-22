@@ -1,13 +1,13 @@
 import { Nag } from './Nag.js';
-import { NOTATION_FAN } from '../../src/constants.js';
+import { NOTATION_SAN } from '../../src/constants.js';
 
 export class Movetext {
   static notation = (fmt, str) => {
-    if (fmt === NOTATION_FAN) {
-      return Movetext.toFan(str);
+    if (fmt === NOTATION_SAN) {
+      return str;
     }
 
-    return str;
+    return Movetext.toFan(str);
   }
 
   static toFan = (str) => {
