@@ -1,10 +1,23 @@
 import { Movetext } from '../../src/common/Movetext';
 
 describe('notation()', () => {
+  it('is 1.e4 e5 2.Nf3 Nc6', () => {
+    const string = '1.e4 e5 2.♘f3 ♘c6';
+    const expected = '1.e4 e5 2.Nf3 Nc6';
+    expect(Movetext.notation('san', string)).toEqual(expected);
+  });
   it('is 1.e4 e5 2.♘f3 ♘c6', () => {
     const string = '1.e4 e5 2.Nf3 Nc6';
     const expected = '1.e4 e5 2.♘f3 ♘c6';
     expect(Movetext.notation(null, string)).toEqual(expected);
+  });
+});
+
+describe('toSan()', () => {
+  it('is 1.e4 e5 2.Nf3 Nc6', () => {
+    const string = '1.e4 e5 2.♘f3 ♘c6';
+    const expected = '1.e4 e5 2.Nf3 Nc6';
+    expect(Movetext.toSan(string)).toEqual(expected);
   });
 });
 

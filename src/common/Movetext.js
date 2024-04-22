@@ -4,10 +4,20 @@ import { NOTATION_SAN } from '../../src/constants.js';
 export class Movetext {
   static notation = (fmt, str) => {
     if (fmt === NOTATION_SAN) {
-      return str;
+      return Movetext.toSan(str);
     }
 
     return Movetext.toFan(str);
+  }
+
+  static toSan = (str) => {
+    str = str.replaceAll('♖', 'R');
+    str = str.replaceAll('♘', 'N');
+    str = str.replaceAll('♗', 'B');
+    str = str.replaceAll('♕', 'Q');
+    str = str.replaceAll('♔', 'K');
+
+    return str;
   }
 
   static toFan = (str) => {
