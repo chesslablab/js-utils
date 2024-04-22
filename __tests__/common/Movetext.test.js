@@ -1,10 +1,18 @@
 import { Movetext } from '../../src/common/Movetext';
 
-describe('toFigurine()', () => {
-  it('is 1.e4 e5 2.Nf3 Nc6', () => {
+describe('notation()', () => {
+  it('is 1.e4 e5 2.♘f3 ♘c6', () => {
     const string = '1.e4 e5 2.Nf3 Nc6';
     const expected = '1.e4 e5 2.♘f3 ♘c6';
-    expect(Movetext.toFigurine(string)).toEqual(expected);
+    expect(Movetext.notation('fan', string)).toEqual(expected);
+  });
+});
+
+describe('toFan()', () => {
+  it('is 1.e4 e5 2.♘f3 ♘c6', () => {
+    const string = '1.e4 e5 2.Nf3 Nc6';
+    const expected = '1.e4 e5 2.♘f3 ♘c6';
+    expect(Movetext.toFan(string)).toEqual(expected);
   });
 });
 

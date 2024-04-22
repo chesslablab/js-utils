@@ -1,7 +1,16 @@
 import { Nag } from './Nag.js';
+import { NOTATION_FAN } from '../../src/constants.js';
 
 export class Movetext {
-  static toFigurine = (str) => {
+  static notation = (fmt, str) => {
+    if (fmt === NOTATION_FAN) {
+      return Movetext.toFan(str);
+    }
+
+    return str;
+  }
+
+  static toFan = (str) => {
     str = str.replaceAll('R', '♖');
     str = str.replaceAll('N', '♘');
     str = str.replaceAll('B', '♗');
