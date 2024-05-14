@@ -1,6 +1,7 @@
 import {
+  Chessboard,
   FEN,
-  Chessboard
+  PIECE
 } from "https://cdn.jsdelivr.net/npm/@chesslablab/cmblab@0.0.1/src/index.min.js";
 
 import {
@@ -22,3 +23,5 @@ const chessboardEditor = new ChessboardEditor(
     chessboard: chessboard
   }
 );
+
+chessboardEditor.props.chessboard.setPiece('e5', PIECE.wn);
