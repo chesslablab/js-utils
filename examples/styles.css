@@ -69,3 +69,7 @@
   background-color: #6c757d !important;
   color: #fff !important;
 }
+
+#chessboardEditor svg {
+  cursor: pointer;
+}

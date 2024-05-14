@@ -20,7 +20,8 @@ const chessboard = new Chessboard(
 const chessboardEditor = new ChessboardEditor(
   document.querySelector('#chessboardEditor'),
   {
-    chessboard: chessboard
+    chessboard: chessboard,
+    pieces: document.querySelector('#chessboardEditorPieces')
   }
 );
 
@@ -29,6 +30,6 @@ chessboardEditor.props.chessboard.setPiece('e5', PIECE.wn);
 chessboardEditor.props.chessboard.context.addEventListener('mousedown', (event) => {
   event.preventDefault();
   if (event.button == 0) {
-    console.log("left click");
+    console.log("left click on a square");
   }
 });
