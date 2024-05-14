@@ -25,3 +25,10 @@ const chessboardEditor = new ChessboardEditor(
 );
 
 chessboardEditor.props.chessboard.setPiece('e5', PIECE.wn);
+
+chessboardEditor.props.chessboard.context.addEventListener('mousedown', (event) => {
+  event.preventDefault();
+  if (event.button == 0) {
+    console.log("left click");
+  }
+});
