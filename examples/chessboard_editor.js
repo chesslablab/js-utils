@@ -1,8 +1,10 @@
+import Modal from 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/js/src/modal.js';
+
 import {
   Chessboard,
   FEN,
   PIECE
-} from "https://cdn.jsdelivr.net/npm/@chesslablab/cmblab@0.0.1/src/index.min.js";
+} from 'https://cdn.jsdelivr.net/npm/@chesslablab/cmblab@0.0.1/src/index.min.js';
 
 import {
   ChessboardEditor
@@ -21,15 +23,8 @@ const chessboardEditor = new ChessboardEditor(
   document.querySelector('#chessboardEditor'),
   {
     chessboard: chessboard,
-    pieces: document.querySelector('#chessboardEditorPieces')
+    modal: new Modal(document.getElementById('chessboardEditorModal')),
+    pieces: document.querySelector('#chessboardEditorModal .modal-body'),
+    sq: ''
   }
 );
-
-chessboardEditor.props.chessboard.setPiece('e5', PIECE.wn);
-
-chessboardEditor.props.chessboard.context.addEventListener('mousedown', (event) => {
-  event.preventDefault();
-  if (event.button == 0) {
-    console.log("left click on a square");
-  }
-});

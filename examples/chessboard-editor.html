@@ -23,49 +23,57 @@
       </p>
       <hr class="hr">
       <h5>Chessboard Editor</h5>
-      <div class="row gy-4">
+      <div id="chessboardEditor" class="row gy-4">
         <div class="col-md-6">
           <div id="chessboard"></div>
         </div>
         <div class="col-md-6">
-          <div id="chessboardEditor">
-            <div id="chessboardEditorPieces">
-              <svg width="60" height="60" viewBox="0 0 40 40">
-                <use xlink:href="#wp"></use>
-              </svg>
-              <svg width="60" height="60" viewBox="0 0 40 40">
-                <use xlink:href="#wb"></use>
-              </svg>
-              <svg width="60" height="60" viewBox="0 0 40 40">
-                <use xlink:href="#wn"></use>
-              </svg>
-              <svg width="60" height="60" viewBox="0 0 40 40">
-                <use xlink:href="#wr"></use>
-              </svg>
-              <svg width="60" height="60" viewBox="0 0 40 40">
-                <use xlink:href="#wq"></use>
-              </svg>
-              <svg width="60" height="60" viewBox="0 0 40 40">
-                <use xlink:href="#wk"></use>
-              </svg>
-              <svg width="60" height="60" viewBox="0 0 40 40">
-                <use xlink:href="#bp"></use>
-              </svg>
-              <svg width="60" height="60" viewBox="0 0 40 40">
-                <use xlink:href="#bb"></use>
-              </svg>
-              <svg width="60" height="60" viewBox="0 0 40 40">
-                <use xlink:href="#bn"></use>
-              </svg>
-              <svg width="60" height="60" viewBox="0 0 40 40">
-                <use xlink:href="#br"></use>
-              </svg>
-              <svg width="60" height="60" viewBox="0 0 40 40">
-                <use xlink:href="#bq"></use>
-              </svg>
-              <svg width="60" height="60" viewBox="0 0 40 40">
-                <use xlink:href="#bk"></use>
-              </svg>
+        </div>
+        <div class="modal fade" id="chessboardEditorModal" tabindex="-1" aria-labelledby="chessboardEditorModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="chessboardEditorModalLabel">Click on a Piece</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <svg width="60" height="60" viewBox="0 0 40 40">
+                  <use xlink:href="#wp"></use>
+                </svg>
+                <svg width="60" height="60" viewBox="0 0 40 40">
+                  <use xlink:href="#wb"></use>
+                </svg>
+                <svg width="60" height="60" viewBox="0 0 40 40">
+                  <use xlink:href="#wn"></use>
+                </svg>
+                <svg width="60" height="60" viewBox="0 0 40 40">
+                  <use xlink:href="#wr"></use>
+                </svg>
+                <svg width="60" height="60" viewBox="0 0 40 40">
+                  <use xlink:href="#wq"></use>
+                </svg>
+                <svg width="60" height="60" viewBox="0 0 40 40">
+                  <use xlink:href="#wk"></use>
+                </svg>
+                <svg width="60" height="60" viewBox="0 0 40 40">
+                  <use xlink:href="#bp"></use>
+                </svg>
+                <svg width="60" height="60" viewBox="0 0 40 40">
+                  <use xlink:href="#bb"></use>
+                </svg>
+                <svg width="60" height="60" viewBox="0 0 40 40">
+                  <use xlink:href="#bn"></use>
+                </svg>
+                <svg width="60" height="60" viewBox="0 0 40 40">
+                  <use xlink:href="#br"></use>
+                </svg>
+                <svg width="60" height="60" viewBox="0 0 40 40">
+                  <use xlink:href="#bq"></use>
+                </svg>
+                <svg width="60" height="60" viewBox="0 0 40 40">
+                  <use xlink:href="#bk"></use>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
