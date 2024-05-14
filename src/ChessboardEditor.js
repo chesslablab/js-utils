@@ -1,6 +1,6 @@
 import AbstractComponent from '../src/AbstractComponent.js';
 
-export class BoardEditor extends AbstractComponent {
+export class ChessboardEditor extends AbstractComponent {
   mount() {
     // TODO
   }

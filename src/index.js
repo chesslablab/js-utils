@@ -3,6 +3,7 @@ export * from './common/Nag.js';
 export * from './common/Opening.js';
 export * from './common/Pgn.js';
 export * from './BoardActionsDropdown.js';
+export * from './ChessboardEditor.js';
 export * from './constants.js';
 export * from './HistoryButtons.js';
 export * from './MovesMetadataTable.js';
