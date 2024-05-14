@@ -20,6 +20,7 @@ export class ChessboardEditor extends AbstractComponent {
         const piece = event.target.getAttribute('xlink:href');
         if (piece) {
           this.props.chessboard.setPiece(this.props.sq, PIECE[piece.substring(1)]);
+          this.props.fen.value = this.props.chessboard.getPosition();
           this.props.modal.hide();
         }
       }
@@ -28,6 +29,7 @@ export class ChessboardEditor extends AbstractComponent {
     this.props.buttons.children.item(0).addEventListener('click', (event) => {
       event.preventDefault();
       this.props.chessboard.setPiece(this.props.sq, '');
+      this.props.fen.value = this.props.chessboard.getPosition();
       this.props.modal.hide();
     });
   }

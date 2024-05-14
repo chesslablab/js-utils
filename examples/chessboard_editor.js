@@ -26,6 +26,7 @@ const chessboardEditor = new ChessboardEditor(
     modal: new Modal(document.getElementById('chessboardEditorModal')),
     pieces: document.querySelector('#chessboardEditorModal .modal-body .pieces'),
     buttons: document.querySelector('#chessboardEditorModal .modal-body .buttons'),
-    sq: ''
+    sq: '',
+    fen: document.querySelector('input[name="fen"]')
   }
 );
