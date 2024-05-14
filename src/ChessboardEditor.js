@@ -24,5 +24,11 @@ export class ChessboardEditor extends AbstractComponent {
         }
       }
     });
+
+    this.props.buttons.children.item(0).addEventListener('click', (event) => {
+      event.preventDefault();
+      this.props.chessboard.setPiece(this.props.sq, '');
+      this.props.modal.hide();
+    });
   }
 }
