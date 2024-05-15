@@ -6,7 +6,16 @@ import AbstractComponent from '../src/AbstractComponent.js';
 
 export class ChessboardEditor extends AbstractComponent {
   _fen() {
-    return `${this.props.chessboard.getPosition()} ${this.props.form.querySelector('select[name="turn"]').value}`;
+    const wCastling = this.props.form.querySelector('select[name="wCastling"]').value;
+    const bCastling = this.props.form.querySelector('select[name="bCastling"]').value;
+
+    let castling = wCastling || bCastling
+      ? `${this.props.form.querySelector('select[name="wCastling"]').value}${this.props.form.querySelector('select[name="bCastling"]').value}`
+      : '-';
+
+    return this.props.chessboard.getPosition() + ' ' +
+      this.props.form.querySelector('select[name="turn"]').value + ' ' +
+      castling
   }
 
   mount() {
@@ -38,6 +47,16 @@ export class ChessboardEditor extends AbstractComponent {
     });
 
     this.props.form.querySelector('select[name="turn"]').addEventListener('change', (event) => {
+      event.preventDefault();
+      this.props.form.querySelector('input[name="fen"]').value = this._fen();
+    });
+
+    this.props.form.querySelector('select[name="wCastling"]').addEventListener('change', (event) => {
+      event.preventDefault();
+      this.props.form.querySelector('input[name="fen"]').value = this._fen();
+    });
+
+    this.props.form.querySelector('select[name="bCastling"]').addEventListener('change', (event) => {
       event.preventDefault();
       this.props.form.querySelector('input[name="fen"]').value = this._fen();
     });
