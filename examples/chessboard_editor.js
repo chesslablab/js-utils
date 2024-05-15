@@ -25,8 +25,9 @@ const chessboardEditor = new ChessboardEditor(
     chessboard: chessboard,
     modal: new Modal(document.getElementById('chessboardEditorModal')),
     pieces: document.querySelector('#chessboardEditorModal .modal-body .pieces'),
-    buttons: document.querySelector('#chessboardEditorModal .modal-body .buttons'),
+    pieceButtons: document.querySelector('#chessboardEditorModal .modal-body .buttons'),
     sq: '',
-    form: document.querySelector('#chessboardEditor form')
+    form: document.querySelector('#chessboardEditor form'),
+    editButtons: document.querySelector('#chessboardEditor form .buttons'),
   }
 );

@@ -1,4 +1,5 @@
 import {
+  FEN,
   PIECE
 } from 'https://cdn.jsdelivr.net/npm/@chesslablab/cmblab@0.0.1/src/index.min.js';
 
@@ -42,7 +43,7 @@ export class ChessboardEditor extends AbstractComponent {
       }
     });
 
-    this.props.buttons.children.item(0).addEventListener('click', (event) => {
+    this.props.pieceButtons.children.item(0).addEventListener('click', (event) => {
       event.preventDefault();
       this.props.chessboard.setPiece(this.props.sq, '');
       this.props.form.querySelector('input[name="fen"]').value = this._fen();
@@ -66,6 +67,16 @@ export class ChessboardEditor extends AbstractComponent {
 
     this.props.form.querySelector('input[name="enPassant"]').addEventListener('change', (event) => {
       event.preventDefault();
+      this.props.form.querySelector('input[name="fen"]').value = this._fen();
+    });
+
+    this.props.editButtons.children.item(0).addEventListener('click', (event) => {
+      event.preventDefault();
+      this.props.chessboard.setPosition(FEN.empty);
+      this.props.form.querySelector('select[name="turn"]').value = 'w';
+      this.props.form.querySelector('select[name="wCastling"]').value = '';
+      this.props.form.querySelector('select[name="bCastling"]').value = '';
+      this.props.form.querySelector('input[name="enPassant"]').value = '-';
       this.props.form.querySelector('input[name="fen"]').value = this._fen();
     });
 
