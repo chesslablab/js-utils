@@ -73,6 +73,13 @@ export class ChessboardEditor extends AbstractComponent {
 
     this.props.editButtons.children.item(0).addEventListener('click', (event) => {
       event.preventDefault();
+      this.props.chessboard.setOrientation(
+        this.props.chessboard.getOrientation() === COLOR.white ? COLOR.black : COLOR.white
+      );
+    });
+
+    this.props.editButtons.children.item(1).addEventListener('click', (event) => {
+      event.preventDefault();
       this.props.chessboard.setPosition(FEN.start);
       this.props.form.querySelector('select[name="turn"]').value = COLOR.white;
       this.props.form.querySelector('select[name="wCastling"]').value = 'KQ';
@@ -81,7 +88,7 @@ export class ChessboardEditor extends AbstractComponent {
       this.props.form.querySelector('input[name="fen"]').value = this._fen();
     });
 
-    this.props.editButtons.children.item(1).addEventListener('click', (event) => {
+    this.props.editButtons.children.item(2).addEventListener('click', (event) => {
       event.preventDefault();
       this.props.chessboard.setPosition(FEN.empty);
       this.props.form.querySelector('select[name="turn"]').value = COLOR.white;
