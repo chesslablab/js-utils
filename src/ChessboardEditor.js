@@ -1,4 +1,5 @@
 import {
+  COLOR,
   FEN,
   PIECE
 } from 'https://cdn.jsdelivr.net/npm/@chesslablab/cmblab@0.0.1/src/index.min.js';
@@ -72,8 +73,18 @@ export class ChessboardEditor extends AbstractComponent {
 
     this.props.editButtons.children.item(0).addEventListener('click', (event) => {
       event.preventDefault();
+      this.props.chessboard.setPosition(FEN.start);
+      this.props.form.querySelector('select[name="turn"]').value = COLOR.white;
+      this.props.form.querySelector('select[name="wCastling"]').value = 'KQ';
+      this.props.form.querySelector('select[name="bCastling"]').value = 'kq';
+      this.props.form.querySelector('input[name="enPassant"]').value = '-';
+      this.props.form.querySelector('input[name="fen"]').value = this._fen();
+    });
+
+    this.props.editButtons.children.item(1).addEventListener('click', (event) => {
+      event.preventDefault();
       this.props.chessboard.setPosition(FEN.empty);
-      this.props.form.querySelector('select[name="turn"]').value = 'w';
+      this.props.form.querySelector('select[name="turn"]').value = COLOR.white;
       this.props.form.querySelector('select[name="wCastling"]').value = '';
       this.props.form.querySelector('select[name="bCastling"]').value = '';
       this.props.form.querySelector('input[name="enPassant"]').value = '-';
