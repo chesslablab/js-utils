@@ -2,7 +2,7 @@
 
 An easy-to-use JavaScript module library of chess components and utilities.
 
-See the demo at [chesslablab.org](https://chesslablab.org/).
+See the demo at [chesslablab/website](https://github.com/chesslablab/website).
 
 ### Contributions
 
