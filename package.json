@@ -1,5 +1,5 @@
 {
-  "name": "@chesslablab/jsblab",
+  "name": "@chesslablab/js-utils",
   "type": "module",
   "module": "./src/index.js",
   "browser": "./src/index.js",
@@ -16,13 +16,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chesslablab/jsblab.git"
+    "url": "git+https://github.com/chesslablab/js-utils.git"
   },
   "author": "Jordi Bassagana",
   "bugs": {
-    "url": "https://github.com/chesslablab/jsblab/issues"
+    "url": "https://github.com/chesslablab/js-utils/issues"
   },
-  "homepage": "https://github.com/chesslablab/jsblab#readme",
+  "homepage": "https://github.com/chesslablab/js-utils#readme",
   "devDependencies": {
     "jest": "^29.7.0"
   },
