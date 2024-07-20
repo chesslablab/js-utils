@@ -1,4 +1,4 @@
-## JsBlab
+## JS Utils
 
 An easy-to-use JavaScript module library of chess components and utilities.
 
