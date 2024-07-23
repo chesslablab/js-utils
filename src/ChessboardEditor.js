@@ -2,7 +2,7 @@ import {
   COLOR,
   FEN,
   PIECE
-} from 'https://cdn.jsdelivr.net/npm/@chesslablab/cmblab@0.0.1/src/index.min.js';
+} from 'https://cdn.jsdelivr.net/npm/@chesslablab/chessboard@0.0.4/src/index.min.js';
 
 import AbstractComponent from '../src/AbstractComponent.js';
 
