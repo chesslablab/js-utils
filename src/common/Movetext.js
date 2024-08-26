@@ -1,16 +1,8 @@
+import { Move } from './Move.js';
 import { Nag } from './Nag.js';
 import { NOTATION_SAN } from '../../src/constants.js';
 
 export class Movetext {
-  static SQUARE = '[a-h]{1}[1-8]{1}';
-  static CHECK = '[\+\#]{0,1}';
-  static KING = 'K' + Movetext.SQUARE + Movetext.CHECK;
-  static KING_CAPTURES = 'Kx' + Movetext.SQUARE + Movetext.CHECK;
-  static KNIGHT = 'N[a-h]{0,1}[1-8]{0,1}' + Movetext.SQUARE + Movetext.CHECK;
-  static KNIGHT_CAPTURES = 'N[a-h]{0,1}[1-8]{0,1}x' + Movetext.SQUARE + Movetext.CHECK;
-  static PIECE = '[BRQ]{1}[a-h]{0,1}[1-8]{0,1}' + Movetext.SQUARE + Movetext.CHECK;
-  static PIECE_CAPTURES = '[BRQ]{1}[a-h]{0,1}[1-8]{0,1}x' + Movetext.SQUARE + Movetext.CHECK;
-
   static notation = (fmt, str) => {
     if (fmt === NOTATION_SAN) {
       return Movetext.toSan(str);
@@ -42,14 +34,14 @@ export class Movetext {
   static replace = (letter, unicode, movetext) => {
     let matches = [];
     if (letter === 'K') {
-      matches = [...matches, ...movetext.matchAll(Movetext.KING)];
-      matches = [...matches, ...movetext.matchAll(Movetext.KING_CAPTURES)];
+      matches = [...matches, ...movetext.matchAll(Move.KING)];
+      matches = [...matches, ...movetext.matchAll(Move.KING_CAPTURES)];
     } else if (letter === 'N') {
-      matches = [...matches, ...movetext.matchAll(Movetext.KNIGHT)];
-      matches = [...matches, ...movetext.matchAll(Movetext.KNIGHT_CAPTURES)];
+      matches = [...matches, ...movetext.matchAll(Move.KNIGHT)];
+      matches = [...matches, ...movetext.matchAll(Move.KNIGHT_CAPTURES)];
     } else {
-      matches = [...matches, ...movetext.matchAll(Movetext.PIECE)];
-      matches = [...matches, ...movetext.matchAll(Movetext.PIECE_CAPTURES)];
+      matches = [...matches, ...movetext.matchAll(Move.PIECE)];
+      matches = [...matches, ...movetext.matchAll(Move.PIECE_CAPTURES)];
     }
     matches.forEach(value => {
       const replaced = value[0].replace(letter, unicode);
