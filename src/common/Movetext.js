@@ -1,3 +1,4 @@
+import { Move } from './Move.js';
 import { Nag } from './Nag.js';
 import { NOTATION_SAN } from '../../src/constants.js';
 
@@ -21,13 +22,33 @@ export class Movetext {
   }
 
   static toFan = (str) => {
-    str = str.replaceAll('R', '♖');
-    str = str.replaceAll('N', '♘');
-    str = str.replaceAll('B', '♗');
-    str = str.replaceAll('Q', '♕');
-    str = str.replaceAll('K', '♔');
+    str = Movetext.replace('R', '♖', str);
+    str = Movetext.replace('N', '♘', str);
+    str = Movetext.replace('B', '♗', str);
+    str = Movetext.replace('Q', '♕', str);
+    str = Movetext.replace('K', '♔', str);
 
     return str;
+  }
+
+  static replace = (letter, unicode, movetext) => {
+    let matches = [];
+    if (letter === 'K') {
+      matches = [...matches, ...movetext.matchAll(Move.KING)];
+      matches = [...matches, ...movetext.matchAll(Move.KING_CAPTURES)];
+    } else if (letter === 'N') {
+      matches = [...matches, ...movetext.matchAll(Move.KNIGHT)];
+      matches = [...matches, ...movetext.matchAll(Move.KNIGHT_CAPTURES)];
+    } else {
+      matches = [...matches, ...movetext.matchAll(Move.PIECE)];
+      matches = [...matches, ...movetext.matchAll(Move.PIECE_CAPTURES)];
+    }
+    matches.forEach(value => {
+      const replaced = value[0].replace(letter, unicode);
+      movetext = movetext.replace(value, replaced);
+    });
+
+    return movetext;
   }
 
   static description = (str) => {
