@@ -3,7 +3,7 @@
   "type": "module",
   "module": "./src/index.js",
   "browser": "./src/index.js",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "license": "MIT",
   "description": "An easy-to-use JavaScript module library of chess components and utilities.",
   "keywords": [
