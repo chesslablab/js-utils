@@ -30,27 +30,31 @@ export class TimerTable extends AbstractComponent {
   mount() {
     this._el.replaceChildren();
 
+    let tr;
+    let wTd;
+    let bTd;
+
     if (this.props.username.w && this.props.username.b) {
-      const usernameTr = document.createElement('tr');
-      const wUsernameTd = document.createElement('td');
-      const bUsernameTd = document.createElement('td');
-      usernameTr.classList.add('h6');
-      wUsernameTd.classList.add('text-end');
-      wUsernameTd.appendChild(document.createTextNode(this.props.username.w));
-      bUsernameTd.appendChild(document.createTextNode(this.props.username.b));
-      usernameTr.appendChild(wUsernameTd);
-      usernameTr.appendChild(bUsernameTd);
-      this._el.appendChild(usernameTr);
+      tr = document.createElement('tr');
+      wTd = document.createElement('td');
+      bTd = document.createElement('td');
+      tr.classList.add('h6');
+      wTd.classList.add('text-end');
+      wTd.appendChild(document.createTextNode(this.props.username.w));
+      bTd.appendChild(document.createTextNode(this.props.username.b));
+      tr.appendChild(wTd);
+      tr.appendChild(bTd);
+      this._el.appendChild(tr);
     }
 
-    const secondsTr = document.createElement('tr');
-    const wSecondsTd = document.createElement('td');
-    const bSecondsTd = document.createElement('td');
-    wSecondsTd.classList.add('text-end');
-    wSecondsTd.appendChild(document.createTextNode(this._convert(this.props.seconds.w)));
-    bSecondsTd.appendChild(document.createTextNode(this._convert(this.props.seconds.b)));
-    secondsTr.appendChild(wSecondsTd);
-    secondsTr.appendChild(bSecondsTd);
-    this._el.appendChild(secondsTr);
+    tr = document.createElement('tr');
+    wTd = document.createElement('td');
+    bTd = document.createElement('td');
+    wTd.classList.add('text-end');
+    wTd.appendChild(document.createTextNode(this._convert(this.props.seconds.w)));
+    bTd.appendChild(document.createTextNode(this._convert(this.props.seconds.b)));
+    tr.appendChild(wTd);
+    tr.appendChild(bTd);
+    this._el.appendChild(tr);
   }
 }
