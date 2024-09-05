@@ -38,7 +38,6 @@ export class TimerTable extends AbstractComponent {
       tr = document.createElement('tr');
       wTd = document.createElement('td');
       bTd = document.createElement('td');
-      tr.classList.add('h6');
       wTd.classList.add('text-end');
       wTd.appendChild(document.createTextNode(this.props.username.w));
       bTd.appendChild(document.createTextNode(this.props.username.b));
@@ -50,6 +49,7 @@ export class TimerTable extends AbstractComponent {
     tr = document.createElement('tr');
     wTd = document.createElement('td');
     bTd = document.createElement('td');
+    tr.classList.add('h4');
     wTd.classList.add('text-end');
     wTd.appendChild(document.createTextNode(this._convert(this.props.seconds.w)));
     bTd.appendChild(document.createTextNode(this._convert(this.props.seconds.b)));
