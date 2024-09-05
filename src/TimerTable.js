@@ -37,8 +37,9 @@ export class TimerTable extends AbstractComponent {
     if (this.props.username.w && this.props.username.b) {
       tr = document.createElement('tr');
       wTd = document.createElement('td');
+      wTd.classList.add('text-end', 'w-50');
       bTd = document.createElement('td');
-      wTd.classList.add('text-end');
+      bTd.classList.add('w-50');
       wTd.appendChild(document.createTextNode(this.props.username.w));
       bTd.appendChild(document.createTextNode(this.props.username.b));
       tr.appendChild(wTd);
@@ -47,10 +48,11 @@ export class TimerTable extends AbstractComponent {
     }
 
     tr = document.createElement('tr');
-    wTd = document.createElement('td');
-    bTd = document.createElement('td');
     tr.classList.add('h4');
-    wTd.classList.add('text-end');
+    wTd = document.createElement('td');
+    wTd.classList.add('text-end', 'w-50');
+    bTd = document.createElement('td');
+    bTd.classList.add('w-50');
     wTd.appendChild(document.createTextNode(this._convert(this.props.seconds.w)));
     bTd.appendChild(document.createTextNode(this._convert(this.props.seconds.b)));
     tr.appendChild(wTd);
