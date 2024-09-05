@@ -15,12 +15,12 @@ export class TimerTable extends AbstractComponent {
 
   count() {
     if (this.props.turn === Pgn.symbol.WHITE) {
-      if (this.props.w > 0) {
-        this.props.w -= 1;
+      if (this.props.seconds.w > 0) {
+        this.props.seconds.w -= 1;
       }
     } else {
-      if (this.props.b > 0) {
-        this.props.b -= 1;
+      if (this.props.seconds.b > 0) {
+        this.props.seconds.b -= 1;
       }
     }
 
@@ -29,17 +29,32 @@ export class TimerTable extends AbstractComponent {
 
   mount() {
     this._el.replaceChildren();
-    const tr = document.createElement('tr');
-    const wTd = document.createElement('td');
-    const wText = document.createTextNode(this._convert(this.props.w));
-    const bTd = document.createElement('td');
-    const bText = document.createTextNode(this._convert(this.props.b));
-    wTd.classList.add('text-end');
-    wTd.appendChild(wText);
-    bTd.appendChild(bText);
-    tr.appendChild(wTd);
-    tr.appendChild(bTd);
 
-    this._el.appendChild(tr);
+    if (this.props.username.w && this.props.username.b) {
+      const usernameTr = document.createElement('tr');
+      const wUsernameTd = document.createElement('td');
+      const wUsernameText = document.createTextNode(this.props.username.w);
+      const bUsernameTd = document.createElement('td');
+      const bUsernameText = document.createTextNode(this.props.username.b);
+      usernameTr.classList.add('h6');
+      wUsernameTd.classList.add('text-end');
+      wUsernameTd.appendChild(wUsernameText);
+      bUsernameTd.appendChild(bUsernameText);
+      usernameTr.appendChild(wUsernameTd);
+      usernameTr.appendChild(bUsernameTd);
+      this._el.appendChild(usernameTr);
+    }
+
+    const secondsTr = document.createElement('tr');
+    const wSecondsTd = document.createElement('td');
+    const wSecondsText = document.createTextNode(this._convert(this.props.seconds.w));
+    const bSecondsTd = document.createElement('td');
+    const bSecondsText = document.createTextNode(this._convert(this.props.seconds.b));
+    wSecondsTd.classList.add('text-end');
+    wSecondsTd.appendChild(wSecondsText);
+    bSecondsTd.appendChild(bSecondsText);
+    secondsTr.appendChild(wSecondsTd);
+    secondsTr.appendChild(bSecondsTd);
+    this._el.appendChild(secondsTr);
   }
 }
