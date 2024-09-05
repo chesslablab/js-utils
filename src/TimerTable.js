@@ -33,13 +33,11 @@ export class TimerTable extends AbstractComponent {
     if (this.props.username.w && this.props.username.b) {
       const usernameTr = document.createElement('tr');
       const wUsernameTd = document.createElement('td');
-      const wUsernameText = document.createTextNode(this.props.username.w);
       const bUsernameTd = document.createElement('td');
-      const bUsernameText = document.createTextNode(this.props.username.b);
       usernameTr.classList.add('h6');
       wUsernameTd.classList.add('text-end');
-      wUsernameTd.appendChild(wUsernameText);
-      bUsernameTd.appendChild(bUsernameText);
+      wUsernameTd.appendChild(document.createTextNode(this.props.username.w));
+      bUsernameTd.appendChild(document.createTextNode(this.props.username.b));
       usernameTr.appendChild(wUsernameTd);
       usernameTr.appendChild(bUsernameTd);
       this._el.appendChild(usernameTr);
@@ -47,12 +45,10 @@ export class TimerTable extends AbstractComponent {
 
     const secondsTr = document.createElement('tr');
     const wSecondsTd = document.createElement('td');
-    const wSecondsText = document.createTextNode(this._convert(this.props.seconds.w));
     const bSecondsTd = document.createElement('td');
-    const bSecondsText = document.createTextNode(this._convert(this.props.seconds.b));
     wSecondsTd.classList.add('text-end');
-    wSecondsTd.appendChild(wSecondsText);
-    bSecondsTd.appendChild(bSecondsText);
+    wSecondsTd.appendChild(document.createTextNode(this._convert(this.props.seconds.w)));
+    bSecondsTd.appendChild(document.createTextNode(this._convert(this.props.seconds.b)));
     secondsTr.appendChild(wSecondsTd);
     secondsTr.appendChild(bSecondsTd);
     this._el.appendChild(secondsTr);
