@@ -78,12 +78,14 @@ const openingTable = new OpeningTable(
   }
 );
 
-const boardActionsDropdown = new BoardActionsDropdown(
-  document.querySelector('#boardActionsDropdown ul'),
-  {
-    movesBrowser: sanMovesBrowser
+const boardActionsDropdown = new BoardActionsDropdown({
+  el: document.querySelector('#boardActionsDropdown ul'),
+  props() {
+    return({
+      movesBrowser: sanMovesBrowser
+    });
   }
-);
+});
 
 // -----------------------------------------------------------------------------
 // Update the chessboard and the moves table

@@ -182,11 +182,13 @@ const historyButtons = new HistoryButtons({
   }
 });
 
-const boardActionsDropdown = new BoardActionsDropdown(
-  document.querySelector('#boardActionsDropdown ul'),
-  {
-    movesBrowser: ravMovesBrowser
+const boardActionsDropdown = new BoardActionsDropdown({
+  el: document.querySelector('#boardActionsDropdown ul'),
+  props() {
+    return({
+      movesBrowser: ravMovesBrowser
+    });
   }
-);
+});
 
 ravMovesBrowser.mount();
