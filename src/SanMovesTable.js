@@ -2,9 +2,9 @@ import { AbstractSanMoves } from '../src/AbstractSanMoves.js';
 
 export class SanMovesTable extends AbstractSanMoves {
   mount() {
-    this._el.replaceChildren();
+    this.el.replaceChildren();
 
-    this._moves().forEach(move => {
+    this.moves().forEach(move => {
       const div = document.createElement('div');
       const nSpan = document.createElement('span');
       const wSpan = document.createElement('span');
@@ -16,10 +16,10 @@ export class SanMovesTable extends AbstractSanMoves {
       wSpan.addEventListener('click', () => {
         this.current = move.wFen;
         this.props.chessboard.setPosition(this.props.fen[this.current], true);
-        this._activeMove(wSpan);
+        this.activeMove(wSpan);
       });
       if (move.wFen === this.current) {
-        this._activeMove(wSpan);
+        this.activeMove(wSpan);
       }
       div.appendChild(wSpan);
 
@@ -29,17 +29,17 @@ export class SanMovesTable extends AbstractSanMoves {
         bSpan.addEventListener('click', () => {
           this.current = move.bFen;
           this.props.chessboard.setPosition(this.props.fen[this.current], true);
-          this._activeMove(bSpan);
+          this.activeMove(bSpan);
         });
         if (move.bFen === this.current) {
-          this._activeMove(bSpan);
+          this.activeMove(bSpan);
         }
         div.appendChild(bSpan);
       }
 
-      this._el.appendChild(div);
+      this.el.appendChild(div);
     });
 
-    this._el.parentNode.parentNode.scrollTop = this._el.parentNode.parentNode.scrollHeight;
+    this.el.parentNode.parentNode.scrollTop = this.el.parentNode.parentNode.scrollHeight;
   }
 }

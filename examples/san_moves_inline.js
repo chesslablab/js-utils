@@ -52,15 +52,16 @@ const inputHandler = (event) => {
 
 chessboard.enableMoveInput(inputHandler);
 
-const sanMovesBrowser = SanMovesFactory.create(
-  FORMAT_INLINE,
-  document.querySelector('#movesBrowser'),
-  {
-    chessboard: chessboard,
-    movetext: movetext,
-    fen: fen
+const sanMovesBrowser = SanMovesFactory.create(FORMAT_INLINE, {
+  el: document.querySelector('#movesBrowser'),
+  props() {
+    return({
+      chessboard: chessboard,
+      movetext: movetext,
+      fen: fen
+    });
   }
-);
+});
 
 const historyButtons = new HistoryButtons({
   el: document.querySelector('#historyButtons'),

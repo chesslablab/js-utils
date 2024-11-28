@@ -2,7 +2,7 @@ import { Movetext } from '../src/common/Movetext.js';
 import AbstractMoves from '../src/AbstractMoves.js';
 
 export class AbstractRavMoves extends AbstractMoves {
-  _description() {
+  description() {
     const description = Movetext.description(this.props.breakdown[0]);
     if (description) {
       const divDescr = document.createElement('div');
@@ -12,7 +12,7 @@ export class AbstractRavMoves extends AbstractMoves {
     }
   }
 
-  _level(rows) {
+  level(rows) {
     let haystack = Movetext.haystack(this.props.filtered);
     let needles = Movetext.needles(rows, this.props.breakdown);
     for (let i = needles.length - 1; i >= 0; i--) {
@@ -24,15 +24,15 @@ export class AbstractRavMoves extends AbstractMoves {
     return rows;
   }
 
-  _color(rows) {
-    return this._level(rows).map(row => {
+  color(rows) {
+    return this.level(rows).map(row => {
       return {
         background: Movetext.rgb(255 - (row.level * 10), 255 - (row.level * 10), 255 - (row.level * 10))
       }
     });
   }
 
-  _moves() {
+  moves() {
     let j = 1;
     let rows = [];
     this.props.breakdown.forEach((breakdown, i) => {
@@ -52,8 +52,8 @@ export class AbstractRavMoves extends AbstractMoves {
     return rows;
   }
 
-  _activeMove(el) {
-    Array.from(document.querySelectorAll(`.${this._className}`)).forEach(el => el.classList.remove(this._className));
-    el.classList.add(this._className);
+  activeMove(el) {
+    Array.from(document.querySelectorAll(`.${this.className}`)).forEach(el => el.classList.remove(this.className));
+    el.classList.add(this.className);
   }
 }

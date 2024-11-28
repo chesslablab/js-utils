@@ -2,12 +2,12 @@ import { AbstractRavMoves } from '../src/AbstractRavMoves.js';
 
 export class RavMovesTable extends AbstractRavMoves {
   mount() {
-    this._el.replaceChildren();
+    this.el.replaceChildren();
 
-    this._description();
+    this.description();
 
-    const moves = this._moves();
-    const colors = this._color(moves);
+    const moves = this.moves();
+    const colors = this.color(moves);
 
     moves.forEach((move, i) => {
       const div = document.createElement('div');
@@ -23,10 +23,10 @@ export class RavMovesTable extends AbstractRavMoves {
       wSpan.addEventListener('click', () => {
         this.current = move.wFen;
         this.props.chessboard.setPosition(this.props.fen[this.current], true);
-        this._activeMove(wSpan);
+        this.activeMove(wSpan);
       });
       if (move.wFen === this.current) {
-        this._activeMove(wSpan);
+        this.activeMove(wSpan);
       }
       div.appendChild(wSpan);
 
@@ -37,15 +37,15 @@ export class RavMovesTable extends AbstractRavMoves {
         bSpan.addEventListener('click', () => {
           this.current = move.bFen;
           this.props.chessboard.setPosition(this.props.fen[this.current], true);
-          this._activeMove(bSpan);
+          this.activeMove(bSpan);
         });
         if (move.bFen === this.current) {
-          this._activeMove(bSpan);
+          this.activeMove(bSpan);
         }
         div.appendChild(bSpan);
       }
 
-      this._el.appendChild(div);
+      this.el.appendChild(div);
     });
   }
 }

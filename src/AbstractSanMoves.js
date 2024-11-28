@@ -3,7 +3,7 @@ import { Pgn } from '../src/common/Pgn.js';
 import AbstractMoves from '../src/AbstractMoves.js';
 
 export class AbstractSanMoves extends AbstractMoves {
-  _moves() {
+  moves() {
     let j = 1;
 
     let rows = Movetext.toRows(
@@ -26,9 +26,9 @@ export class AbstractSanMoves extends AbstractMoves {
     return rows;
   }
 
-  _activeMove(el) {
-    Array.from(document.querySelectorAll(`.${this._className}`)).forEach(el => el.classList.remove(this._className));
-    el.classList.add(this._className);
+  activeMove(el) {
+    Array.from(document.querySelectorAll(`.${this.className}`)).forEach(el => el.classList.remove(this.className));
+    el.classList.add(this.className);
     this.props.chessboard.state.inputWhiteEnabled = false;
     this.props.chessboard.state.inputBlackEnabled = false;
     if (this.props.fen[this.current] === this.props.fen[this.props.fen.length - 1]) {

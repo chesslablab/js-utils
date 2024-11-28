@@ -1,18 +1,16 @@
 import {
-  FORMAT_INLINE,
   FORMAT_TABLE,
   SanMovesInline,
   SanMovesTable
 } from '../src/index.js';
 
 export class SanMovesFactory {
-  static create = (fmt, el, props) => {
+  static create = (fmt, params) => {
+    params.el.classList.add(fmt);
     if (fmt === FORMAT_TABLE) {
-      el.classList.add(FORMAT_TABLE);
-      return new SanMovesTable(el, props);
+      return new SanMovesTable(params);
     }
-    el.classList.add(FORMAT_INLINE);
 
-    return new SanMovesInline(el, props);
+    return new SanMovesInline(params);
   }
 }
