@@ -7,7 +7,6 @@ import {
   FORMAT_TABLE,
   BoardActionsDropdown,
   HistoryButtons,
-  OpeningTable,
   RavMovesFactory
 } from '../src/index.js';
 

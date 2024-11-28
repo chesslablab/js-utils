@@ -51,12 +51,14 @@ const historyButtons = new HistoryButtons({
   }
 });
 
-const openingTable = new OpeningTable(
-  document.querySelector('#openingTable tbody'),
-  {
-    movetext: movetext
+const openingTable = new OpeningTable({
+  el: document.querySelector('#openingTable tbody'),
+  props() {
+    return({
+      movetext: movetext
+    });
   }
-);
+});
 
 const movesMetadataTable = new MovesMetadataTable(
   document.querySelector('#movesMetadataTable tbody'),
