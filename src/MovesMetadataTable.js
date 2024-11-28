@@ -1,7 +1,7 @@
 import BaseComponent from '../src/BaseComponent.js';
 
 export class MovesMetadataTable extends BaseComponent {
-  _leftTd() {
+  leftTd() {
     const leftTd = document.createElement('td');
 
     if (this.props?.White) {
@@ -16,7 +16,7 @@ export class MovesMetadataTable extends BaseComponent {
     return leftTd;
   }
 
-  _centerTd() {
+  centerTd() {
     const centerTd = document.createElement('td');
 
     let data = '';
@@ -51,7 +51,7 @@ export class MovesMetadataTable extends BaseComponent {
     return centerTd;
   }
 
-  _rightTd() {
+  rightTd() {
     const rightTd = document.createElement('td');
 
     if (this.props?.Black) {
@@ -70,9 +70,9 @@ export class MovesMetadataTable extends BaseComponent {
     this.el.replaceChildren();
 
     const tr = document.createElement('tr');
-    const leftTd = this._leftTd();
-    const centerTd = this._centerTd();
-    const rightTd = this._rightTd();
+    const leftTd = this.leftTd();
+    const centerTd = this.centerTd();
+    const rightTd = this.rightTd();
 
     tr.appendChild(leftTd);
     tr.appendChild(centerTd);

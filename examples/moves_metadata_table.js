@@ -32,15 +32,16 @@ const chessboard = new Chessboard(
   }
 );
 
-const sanMovesBrowser = SanMovesFactory.create(
-  FORMAT_TABLE,
-  document.querySelector('#movesBrowser'),
-  {
-    chessboard: chessboard,
-    movetext: movetext,
-    fen: fen
+const sanMovesBrowser = SanMovesFactory.create(FORMAT_TABLE, {
+  el: document.querySelector('#movesBrowser'),
+  props() {
+    return({
+      chessboard: chessboard,
+      movetext: movetext,
+      fen: fen
+    });
   }
-);
+});
 
 const historyButtons = new HistoryButtons({
   el: document.querySelector('#historyButtons'),
