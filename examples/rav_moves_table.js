@@ -173,12 +173,14 @@ const ravMovesBrowser = RavMovesFactory.create(
   }
 );
 
-const historyButtons = new HistoryButtons(
-  document.querySelector('#historyButtons'),
-  {
-    movesBrowser: ravMovesBrowser
+const historyButtons = new HistoryButtons({
+  el: document.querySelector('#historyButtons'),
+  props() {
+    return({
+      movesBrowser: ravMovesBrowser
+    });
   }
-);
+});
 
 const boardActionsDropdown = new BoardActionsDropdown(
   document.querySelector('#boardActionsDropdown ul'),

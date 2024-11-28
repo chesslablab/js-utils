@@ -42,12 +42,14 @@ const sanMovesBrowser = SanMovesFactory.create(
   }
 );
 
-const historyButtons = new HistoryButtons(
-  document.querySelector('#historyButtons'),
-  {
-    movesBrowser: sanMovesBrowser
+const historyButtons = new HistoryButtons({
+  el: document.querySelector('#historyButtons'),
+  props() {
+    return({
+      movesBrowser: sanMovesBrowser
+    });
   }
-);
+});
 
 const openingTable = new OpeningTable(
   document.querySelector('#openingTable tbody'),
