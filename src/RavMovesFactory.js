@@ -1,4 +1,5 @@
 import {
+  FORMAT_INLINE,
   FORMAT_TABLE,
   RavMovesInline,
   RavMovesTable
@@ -6,10 +7,11 @@ import {
 
 export class RavMovesFactory {
   static create = (fmt, params) => {
-    params.el.classList.add(fmt);
     if (fmt === FORMAT_TABLE) {
+      params.el.classList.add(fmt);
       return new RavMovesTable(params);
     }
+    params.el.classList.add(FORMAT_INLINE);
 
     return new RavMovesInline(params);
   }
