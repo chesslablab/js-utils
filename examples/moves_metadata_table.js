@@ -60,20 +60,22 @@ const openingTable = new OpeningTable({
   }
 });
 
-const movesMetadataTable = new MovesMetadataTable(
-  document.querySelector('#movesMetadataTable tbody'),
-  {
-    Event: 'Amber Rapid',
-    Site: 'Monte Carlo MNC',
-    Date: '2005.03.20',
-    White: 'Anand,V',
-    WhiteElo: '2786',
-    Result: '1-0',
-    Black: 'Topalov,V',
-    BlackElo: '2757',
-    ECO: 'C67'
+const movesMetadataTable = new MovesMetadataTable({
+  el: document.querySelector('#movesMetadataTable tbody'),
+  props() {
+    return({
+      Event: 'Amber Rapid',
+      Site: 'Monte Carlo MNC',
+      Date: '2005.03.20',
+      White: 'Anand,V',
+      WhiteElo: '2786',
+      Result: '1-0',
+      Black: 'Topalov,V',
+      BlackElo: '2757',
+      ECO: 'C67'
+    });
   }
-);
+});
 
 movesMetadataTable.mount();
 sanMovesBrowser.mount();

@@ -1,6 +1,6 @@
-import AbstractComponent from '../src/AbstractComponent.js';
+import BaseComponent from '../src/BaseComponent.js';
 
-export class MovesMetadataTable extends AbstractComponent {
+export class MovesMetadataTable extends BaseComponent {
   _leftTd() {
     const leftTd = document.createElement('td');
 
@@ -67,7 +67,7 @@ export class MovesMetadataTable extends AbstractComponent {
   }
 
   mount() {
-    this._el.replaceChildren();
+    this.el.replaceChildren();
 
     const tr = document.createElement('tr');
     const leftTd = this._leftTd();
@@ -83,7 +83,7 @@ export class MovesMetadataTable extends AbstractComponent {
       centerTd.firstChild?.nodeValue &&
       rightTd.firstChild?.nodeValue
     ) {
-      this._el.appendChild(tr);
+      this.el.appendChild(tr);
     }
   }
 }
