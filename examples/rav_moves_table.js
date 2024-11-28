@@ -163,14 +163,15 @@ const chessboard = new Chessboard(
   }
 );
 
-const ravMovesBrowser = RavMovesFactory.create(
-  FORMAT_TABLE,
-  document.querySelector('#movesBrowser'),
-  {
-    ...props,
-    chessboard: chessboard
+const ravMovesBrowser = RavMovesFactory.create(FORMAT_TABLE, {
+  el: document.querySelector('#movesBrowser'),
+  props() {
+    return({
+      ...props,
+      chessboard: chessboard
+    });
   }
-);
+});
 
 const historyButtons = new HistoryButtons({
   el: document.querySelector('#historyButtons'),

@@ -1,18 +1,16 @@
 import {
-  FORMAT_INLINE,
   FORMAT_TABLE,
   RavMovesInline,
   RavMovesTable
 } from '../src/index.js';
 
 export class RavMovesFactory {
-  static create = (fmt, el, props) => {
+  static create = (fmt, params) => {
+    params.el.classList.add(fmt);
     if (fmt === FORMAT_TABLE) {
-      el.classList.add(FORMAT_TABLE);
-      return new RavMovesTable(el, props);
+      return new RavMovesTable(params);
     }
-    el.classList.add(FORMAT_INLINE);
 
-    return new RavMovesInline(el, props);
+    return new RavMovesInline(params);
   }
 }

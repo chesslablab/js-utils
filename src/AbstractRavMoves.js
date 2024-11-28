@@ -8,7 +8,7 @@ export class AbstractRavMoves extends AbstractMoves {
       const divDescr = document.createElement('div');
       divDescr.appendChild(document.createTextNode(description));
       divDescr.classList.add('description');
-      this._el.appendChild(divDescr);
+      this.el.appendChild(divDescr);
     }
   }
 
