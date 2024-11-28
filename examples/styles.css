@@ -71,6 +71,6 @@
 }
 
 #chessboard,
-#chessboardEditorModal svg {
+#chessboardEditor .modal svg {
   cursor: pointer;
 }

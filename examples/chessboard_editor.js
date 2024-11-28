@@ -2,8 +2,7 @@ import Modal from 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/js/src/modal.js'
 
 import {
   Chessboard,
-  FEN,
-  PIECE
+  FEN
 } from 'https://cdn.jsdelivr.net/npm/@chesslablab/chessboard@0.0.4/src/index.min.js';
 
 import {
@@ -19,15 +18,17 @@ const chessboard = new Chessboard(
   }
 );
 
-const chessboardEditor = new ChessboardEditor(
-  document.querySelector('#chessboardEditor'),
-  {
-    chessboard: chessboard,
-    modal: new Modal(document.getElementById('chessboardEditorModal')),
-    pieces: document.querySelector('#chessboardEditorModal .modal-body .pieces'),
-    pieceButtons: document.querySelector('#chessboardEditorModal .modal-body .buttons'),
-    sq: '',
-    form: document.querySelector('#chessboardEditor form'),
-    editButtons: document.querySelector('#chessboardEditor form .buttons'),
+const chessboardEditor = new ChessboardEditor({
+  el: document.querySelector('#chessboardEditor'),
+  props() {
+    return({
+      chessboard: chessboard,
+      modal: new Modal(this.el.querySelector('.modal')),
+      pieces: this.el.querySelector('.modal-body .pieces'),
+      pieceButtons: this.el.querySelector('.modal-body .buttons'),
+      sq: '',
+      form: this.el.querySelector('form'),
+      editButtons: this.el.querySelector('form .buttons')
+    });
   }
-);
+});
