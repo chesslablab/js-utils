@@ -18,20 +18,22 @@ const chessboard = new Chessboard(
   }
 );
 
-const timerTable = new TimerTable(
-  document.querySelector('#timerTable tbody'),
-  {
-    turn: 'w',
-    seconds: {
-      w: 300,
-      b: 300
-    },
-    username: {
-      w: 'Alice',
-      b: 'Bob'
-    }
+const timerTable = new TimerTable({
+  el: document.querySelector('#timerTable tbody'),
+  props() {
+    return({
+      turn: 'w',
+      seconds: {
+        w: 300,
+        b: 300
+      },
+      username: {
+        w: 'Alice',
+        b: 'Bob'
+      }
+    });
   }
-);
+});
 
 setInterval(() => {
   timerTable.count().mount();

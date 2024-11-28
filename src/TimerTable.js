@@ -1,8 +1,8 @@
-import AbstractComponent from '../src/AbstractComponent.js';
+import BaseComponent from '../src/BaseComponent.js';
 import { Pgn } from '../src/index.js';
 
-export class TimerTable extends AbstractComponent {
-  _convert(count) {
+export class TimerTable extends BaseComponent {
+  convert(count) {
     const h = Math.floor(count / (60 * 60)).toString().padStart(2, '0');
     const m = Math.floor(count / 60 % 60).toString().padStart(2, '0');
     const s = Math.floor(count % 60).toString().padStart(2, '0');
@@ -28,7 +28,7 @@ export class TimerTable extends AbstractComponent {
   }
 
   mount() {
-    this._el.replaceChildren();
+    this.el.replaceChildren();
 
     let tr;
     let wTd;
@@ -44,7 +44,7 @@ export class TimerTable extends AbstractComponent {
       bTd.appendChild(document.createTextNode(this.props.username.b));
       tr.appendChild(wTd);
       tr.appendChild(bTd);
-      this._el.appendChild(tr);
+      this.el.appendChild(tr);
     }
 
     tr = document.createElement('tr');
@@ -53,10 +53,10 @@ export class TimerTable extends AbstractComponent {
     wTd.classList.add('text-end', 'w-50');
     bTd = document.createElement('td');
     bTd.classList.add('w-50');
-    wTd.appendChild(document.createTextNode(this._convert(this.props.seconds.w)));
-    bTd.appendChild(document.createTextNode(this._convert(this.props.seconds.b)));
+    wTd.appendChild(document.createTextNode(this.convert(this.props.seconds.w)));
+    bTd.appendChild(document.createTextNode(this.convert(this.props.seconds.b)));
     tr.appendChild(wTd);
     tr.appendChild(bTd);
-    this._el.appendChild(tr);
+    this.el.appendChild(tr);
   }
 }
