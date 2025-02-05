@@ -3,10 +3,11 @@ export default class BaseComponent {
   props;
 
   constructor(params) {
-    this.el = params.el ? params.el : null;
-    this.props = params.el && params.props ? params.props() : null;
-
-    this.mount();
+    if (params.el) {
+      this.el = params.el;
+      this.props = params.props ? params.props() : null;
+      this.mount();
+    }
   }
 
   mount() {
